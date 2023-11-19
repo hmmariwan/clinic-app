@@ -1,0 +1,74 @@
+{% extends 'web/index.html' %}
+{% load static %}
+
+{% block title %} 
+About 
+{% endblock %}
+
+{% block css %}
+<link href="{% static 'CSS/about-style.css' %}" rel="stylesheet">
+{% endblock %}
+
+
+{%block content%}
+
+<div class="about-div">
+    <div class="child-div1"><strong>HIGH QUALITY</strong></div>
+    <div class="child-div2"><strong>DENTAL CARE</strong></div>
+    <div class="child-div4">We have been providing family dental care to the Neasden community for a century.</div>
+    <div class="child-div3"><a href="#team">MEET THE TEAM</a></div>
+</div>
+<p class="about-title"><strong>CHEAPEST DENTAL CLINIC</strong></p>
+<p class="about-text">At Cheapest Dental Clinic we are committed to providing a high level of service and patient 
+    satisfaction in a relaxed and friendly environment. 
+    Within the walls of our charming Grade 2 listed building, 
+    our highly qualified and experienced team utilise the latest technology to look after our 
+    patients’ oral health and help transform their smiles.
+    We always strive to put our patients first and are able to offer a wide range of treatment 
+    options to help optimise their oral health. 
+    If you would like to find out more about becoming part of our family then please call us on 
+    0204 7777 666.</p>
+<div class="team-div" id="team">
+    <div class="horizontal-div top">
+        <div class="vertical-div">
+            <a href="{%url 'david_terry'%}" class="doctor">
+                <i class="fa-solid fa-user"></i>
+                <p class="team-name">DR DAVID TERRY <br> <span class="team-expert">PRINCIPAL DENTIST</span></p> 
+            </a>
+        </div>
+        <div class="vertical-div">
+            <a href="{%url 'silvia_omer'%}" class="doctor">
+                <i class="fa-solid fa-user"></i>
+                <p class="team-name">DR SILVIA OMER <br><span class="team-expert">COSMETIC & GENERAL DENTISTRY</span></p> 
+            </a>
+        </div>
+        <div class="vertical-div">
+            <i class="fa-solid fa-user"></i>
+        </div>
+        <div class="vertical-div">
+            <i class="fa-solid fa-user"></i>
+        </div>
+    </div>
+    <div class="horizontal-div bottom">
+        <div class="vertical-div">
+            <i class="fa-solid fa-user"></i>
+        </div>
+        <div class="vertical-div">
+            <i class="fa-solid fa-user"></i>
+        </div>
+        <div class="vertical-div">
+            <i class="fa-solid fa-user"></i>
+        </div>
+        <div class="vertical-div">
+            <i class="fa-solid fa-user"></i>
+        </div>
+    </div>
+</div>
+    
+
+{%endblock%}
+    
+    
+
+    
+    

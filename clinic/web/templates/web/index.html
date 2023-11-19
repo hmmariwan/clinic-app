@@ -1,0 +1,263 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}  {% endblock %}</title>
+    {% block css %}{% endblock %}
+    <link href="{% static 'CSS/base-style.css' %}" rel="stylesheet">
+
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet"/>
+
+    <!--the following links have been imported for using the Font Awsome's and Google's icons-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+    <div class="header-div">
+        <header>
+            <div class="header-div-logo">
+                <img src="{% static 'images/Dental logo.jpg' %}" alt="Logo" class="header-logo">
+                <div class="header-name"><strong>OLDEST</strong></div>
+                <div class="header-clinic"><strong>DENTAL CLINIC</strong></div>
+            </div>
+            <div class="header-div-email">
+                <a href="mailto:hmareiwan@outlook.com" class="email-icon">
+                    <i class="fa-solid fa-envelope"></i><span class="email-address">Email us</span>
+                </a>
+            </div>
+            <div class="header-div-tel">
+                <a href="tel:+447965928303" class="tel-icon">
+                    <i class="fa-solid fa-phone"></i><span class="tel-number">Call us</span>
+                </a>
+            </div>
+            <div class="header-appointment-div">
+                <a href="{% url 'new_patients' %}" class="header-appointment-button"><p>Book Now</p></a>
+            </div>
+            
+            <div class="nav-div">
+                <nav>
+                    <div class="navigation">
+                        <input type="checkbox" class="toggle-menu">
+                        <div class="hamburger"></div>
+                        <ul class="menu">
+                            <li><a href="{%  url 'home' %}" class="base-nav border" >HOME</a></li>
+                            <li><a href="{%  url 'about' %}" class="base-nav" >ABOUT</a></li>
+                            <li class="dropdown"> 
+                                <a href="#" class="base-nav iarrow">TREATMENT<i class="fa-solid fa-square-caret-down"></i> </a>
+                                <ul class="dropdown-content">
+                                    <div class="dropdown-container"> 
+                                        <li><a href="{% url 'general_dentistry' %}" class="base-nav">GENERAL DENTISTRY</a></li>
+                                        <li><a href="{% url 'cosmetic_dentistry' %}" class="base-nav">COSMETIC DENTISTRY</a></li>
+                                        <li><a href="{% url 'specialist_dentistry' %}" class="base-nav" >SPECIALIST DESTISTRY</a></li>
+                                    </div>
+                                </ul>
+                            </li>
+                            <li class="dropdown"> 
+                                <a href="#" class="base-nav iarrow">FEES & FINANCE<i class="fa-solid fa-square-caret-down"></i> </a>
+                                <ul class="dropdown-content">
+                                    <div class="dropdown-container"> 
+                                        <li><a href="{% url 'private_fees' %}" class="base-nav" >PRIVATE FEES & FINANCE</a> </li>
+                                        <li><a href="{% url 'nhs_fees' %}" class="base-nav">NHS FEES</a></li>
+                                    </div>
+                                </ul>
+                            </li>
+                            <li><a href="{%  url 'contact' %}" class="base-nav" >CONTACT</a></li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </header>
+    </div>
+
+    {% block content %}
+    <!-- This is an empty block that child templates will override with their own content. -->
+    {% endblock %}
+
+    {% block common_block %}
+    <div class="quality-enquire-div">
+        <div class="quality-div">
+            <img src="{% static 'images/Dental logo.jpg' %}" alt="Logo" class="base-logo">
+            <p class="quality-div-title"><span>WHY CHOOSE</span> <br> CHEAPEST DENTAL CLINIC</p>
+            <ul>
+                <li>Proud to be the highest Google rated dentist in Neasden</li><br><div><i class="fa-solid fa-star"></i></div>
+                <li>Serving the local community for a century</li><br><div><i class="fa-solid fa-star"></i></div>
+                <li>Quality dental care at affordable prices</li><br><div><i class="fa-solid fa-star"></i></div>
+                <li>Excellent service and patient satisfaction</li><br><div><i class="fa-solid fa-star"></i></div>
+                <li>Modern technology in a relaxed environment</li><br><div><i class="fa-solid fa-star"></i></div>
+                <li>Highly qualified and patient-focused team</li>
+            </ul>
+            <i class="material-icons">event</i> 
+            <p class="base-appointment-text">Book an appointment</p>
+            <a href="{% url 'new_patients' %}" class="base-appointment-button">Book Now</a>
+        </div>
+        <div class="enquire-div" id="enquire">
+            <form method="post" action="{% url 'contact' %}">
+                {% csrf_token %}
+                <p class="enquiry">ENQUIRY FORM</p>
+                <div class="form-online">
+                    <label>Name</label>
+                    <input type="text" name="name" id="name" placeholder="Enter your name" required>
+                </div>
+                <div class="form-online">
+                    <label>Mobile</label>
+                    <input type="text" name="mobile" id="mobile" placeholder="Enter your mobile" required>
+                </div>
+                <div class="form-online">
+                    <label>Email</label>
+                    <input type="email" name="email" id="email" placeholder="Enter your email">
+                </div>
+                <div class="form-online">
+                    <label>Subject</label>
+                    <input type="text" name="subject" id="subject" placeholder="Enter a subject">
+                </div>
+                <div class="form-online">
+                    <label>Message</label>
+                    <textarea type="text" name="message" id="message" placeholder="Enter your message" required></textarea>
+                </div>
+                
+                <label>
+                    <input type="checkbox" required><p class="data-text1">I agree to Cheapest Dental Clinic using my personal data to provide me with information about dental treatment.</p>
+                </label><br>
+                
+                <input type="checkbox" id="marketing" required>
+                <label for="marketing">
+                    <p class="data-text2">I agree to Cheapest Dental Clinic using my personal data to keep me informed about marketing offers and initiatives that may be of interest.</p>
+                </label>
+                
+                    
+                <div class="form-online">
+                    <input type="submit" class="form-online-button">
+                </div>
+            </form>
+        </div>
+    </div>
+    {% endblock %}
+    <br>
+    {% block optional_div %}
+    <div class="logos-div">
+        <div class="horizontal horizontal-top">
+            <div class="vertical">
+                <img src="{% static 'images/BDA.jpg' %}" alt="British Dental Assosiation">
+            </div>
+            <div class="vertical">
+                <img src="{% static 'images/digital dentistry.jpg' %}" alt="digital dentistry image" >
+           </div>
+           <div class="vertical">
+                <img src="{% static 'images/GDC.jpg' %}" alt="GDC image" >
+           </div>
+           <div class="vertical">
+                <img src="{% static 'images/invisalign.jpg' %}" alt="invisalign image" >
+           </div>
+           <div class="vertical">
+                <img src="{% static 'images/itero logo.jpg' %}" alt="itero logo image" >
+           </div>
+        </div>
+        <div class="horizontal horizontal-bottom">
+            <div class="vertical">
+                <img src="{% static 'images/boutique whitening.jpg' %}" alt="Boutique whitening" >
+            </div>
+            <div class="vertical">
+                <img src="{% static 'images/care quality commision.jpg' %}" alt="care quality commision image" >
+            </div>
+            <div class="vertical">
+                <img src="{% static 'images/enlighten.jpg' %}" alt="enlighten image" >
+            </div>
+            <div class="vertical">
+                <img src="{% static 'images/swift dental group.jpg' %}" alt="nhs image" >
+            </div>
+            <div class="vertical">
+                <img src="{% static 'images/pacific dental group.jpg' %}" alt="pacific dental group image" class="pacific-image">
+            </div>
+        </div>
+    </div>
+    {% endblock %}
+
+    <div class="footer-div">
+
+        <div class="footer-div-quicklink">
+            <h3 class="footer-heading">Quick Links</h3>
+            
+            <li>
+                <div class="hover">
+                    <i class="bx bx-chevron-down" aria-hidden="true"></i>
+                    <a href="{% url 'about' %}">About</a>
+                </div>
+            </li>
+            
+            <li>
+                <div class="hover">
+                    <i class="bx bx-chevron-down" aria-hidden="true"></i>
+                    <a href="{% url 'specialist_dentistry' %}">SPECIALIST DENTIDTRY</a>
+                </div>
+            </li>
+            <li>
+                <div class="hover">
+                    <i class="bx bx-chevron-down" aria-hidden="true"></i>
+                    <a href="{% url 'cosmetic_dentistry' %}">COSMETIC DENTISTRY</a>
+                </div>
+            </li>
+            <li>
+                <div class="hover">
+                    <i class="bx bx-chevron-down" aria-hidden="true"></i>
+                    <!--the target attribute opens the external site in a new tab. the rel attribute improves the security of my site-->
+                    <a href="https://www.gdc-uk.org/" target="_blank" rel="noopener noreferrer">GDC Website</a>
+                </div>
+            </li>
+        </div>
+          
+        <div class="footer-div-contact">
+            <h3 class="footer-heading">Contact Details</h3>
+            <address class="footer-address">
+                <a href="https://maps.app.goo.gl/oQx8pQ3UFV7x1QPZ6" >
+                    <i class="fa-sharp fa-solid fa-location-dot"></i> 240 High Street <br>London <br> NW5 6TY
+                </a>
+            </address>
+            <div class="email-hover">
+                <a href="mailto:hmareiwan@outlook.com" class="footer-email">
+                    <i class="fa-solid fa-envelope"></i><span class="email-address">info@cheapestdentalclinic.co.uk</span>
+                </a> 
+            </div>
+            <div class="hover">
+                <a href="tel:+447965928303" class="footer-tel">
+                    <i class="fa-solid fa-phone"></i><span class="footer-tel-number">0203 6666 666</span>
+                </a>
+            </div>
+            <iframe class="footer-map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2480.3662103968645!2d-0.2480324242063424!3d51.561519771825715!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4876110671906a97%3A0x85ae46e226fc601e!2s96%20Tanfield%20Ave%2C%20Neasden%2C%20London%20NW2%207RT!5e0!3m2!1sen!2suk!4v1698852151336!5m2!1sen!2suk"></iframe>
+        </div>
+        <div class="footer-div-opening">
+            <h3 class="footer-opening">Opening Times</h3>
+            <table class="practice-opening">
+              <tr>
+                <th></th>
+                <th>Open</th>
+                <th>Close</th>	
+              </tr>
+              <tr>
+                <td>Mon - Fri</td>
+                <td>09:00</td>
+                <td>18:00</td>
+              </tr>
+              <tr>
+                <td>Saturday</td>
+                <td>10:00</td>
+                <td>13:00</td>
+              </tr>	
+            </table>
+        </div>
+    </div>
+    <div class="footer">
+        <footer>
+           
+            <span>Find us on:</span>
+            <a href="https://www.facebook.com" target="_blank" rel="noopener" aria-label="Find us on Facebook (link opens in a new tab)">Facebook</a>
+            <a href="https://www.instagram.com" target="_blank" rel="noopener" aria-label="Find us on Instagram (link opens in a new tab)">Instagram</a>
+            <a href="https://www.twitter.com" target="_blank" rel="noopener" aria-label="Find us on Twitter (link opens in a new tab)">Twitter</a>
+            <p><i class="fa-regular fa-copyright"></i> Copyright Cheapest Dental Clinic 2023</p> 
+    
+        </footer> 
+    </div>
+
+</body>
+</html>

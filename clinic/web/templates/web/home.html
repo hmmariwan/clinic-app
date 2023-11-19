@@ -1,0 +1,60 @@
+{% extends 'web/index.html' %}
+{% load static %}
+
+
+{% block title %} 
+Home
+{% endblock %}
+
+{% block css %}
+<link href="{% static 'CSS/hom-style.css' %}" rel="stylesheet">
+{% endblock %}
+
+
+{% block content %}
+
+<div class="home-div">
+    <iframe class="home-video" src="https://www.youtube.com/embed/mXqlpP0gnaY?si=VWrALqz3TxpanDua" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    <div class="heading-text"><strong>Trust in Calm</strong></div>
+    <div class="ht1">Dental</div><div class="ht2">Cosmetic</div><div class="ht3">Wellness</div>
+    <div class="home-vl1"></div><div class="home-vl2"></div>
+</div>
+
+<p class="home-title"><strong>WELCOME TO CHEAPEST <br> DENTAL CLINIC</strong></p>
+<p class="home-text">Located in the heart of Neasden, we have been helping the local 
+    community with high-quality dental care for over a decade. 
+    We take great pride in the excellent NHS and private treatments we offer and warmly 
+    welcome new patients to join our growing practice.
+    With patients from all parts of north London our passion is to deliver exceptional service 
+    to all of our patients and help provide them with beautiful, bright, healthy smiles.
+</p>
+<div class="tel-email-div">
+    <div class="hover-tel">
+        <a href="tel:+447965928303" >
+            <span >CALL US</span>
+        </a>
+    </div>
+    <div class="vl1"></div>
+    <div class="hover-email">
+        <a href="mailto:hmareiwan@outlook.com" >
+            <span >EMAIL US</span>
+        </a> 
+    </div>
+    <div class="vl2"></div>
+    <div class="hover-contact">
+        <a href='#enquire' >
+            <span>ENQUIRE ONLINE</span>
+        </a> 
+    </div>
+</div>
+<div class="images-div">
+    <div class="grid-image odd" style="background-image: url('{% static 'images/dental bridges.jpg' %}');"></div>
+    <div class="grid-image"></div>
+    <div class="grid-image odd" style="background-image: url('{% static 'images/dental implants.jpg' %}');"></div>
+    <div class="grid-image"></div>
+    <div class="grid-image odd"></div>
+    <div class="grid-image" style="background-image: url('{% static 'images/dental emergency.jpg' %}');"></div>
+    <div class="grid-image odd"></div>
+    <div class="grid-image" style="background-image: url('{% static 'images/invisible brace.jpg' %}');"></div>
+</div>
+{% endblock %}

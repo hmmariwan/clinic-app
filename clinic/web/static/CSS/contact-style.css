@@ -1,0 +1,433 @@
+@media (min-width: 781px){
+    .alert {
+        position: absolute;
+        top: 30px;
+        left: 270px;
+        color: white;
+        font-size: 18px;
+    }
+    
+    .contact-div{
+        background-color: rgb(175, 175, 166);
+        height: 350px;
+        width: 100%;
+        top: 0;
+        left: 0;
+        position:relative;
+    }
+    .contact-title{
+        font-size: 60px;
+        font-family: 'Courier New', Courier, monospace;
+        color: black;
+        position: absolute;
+        top: 100px;
+        left: 50px;
+    }
+    .contact-title span{
+        font-size: 60px;
+        font-family: 'Courier New', Courier, monospace;
+        color: black;
+        position: absolute;
+        top: 50px;
+        left: 70px;
+    }
+
+    .contact-text{
+        font-size: 16px;
+        font-family: 'Courier New', Courier, monospace;
+        color: black;
+        position: absolute;
+        left: 80px;
+        top: 220px;
+    }
+    .span1{
+        margin-left: 20px;
+    }
+    .span2{
+        margin-left: 60px;
+    }
+    .in-touch i {
+        position: absolute;
+        top: 292px;
+        left: 150px;
+        font-size: 26px;
+        transform: rotate(-85deg);
+        padding: 0.5rem;
+        background-color: var(--light-grey);
+        border-radius: 10px;
+        }
+    .in-touch a{
+        text-decoration: none;
+        color: black;
+        font-family: 'Courier New', Courier, monospace;
+        font-size: 26px;
+        position: absolute;
+        top: 300px;
+        left: 180px;
+    }
+    .in-touch:hover,.in-touch:hover a{
+        color: blue;
+    }
+    .tel-address-div{
+        position: relative;
+        margin-top: -26px;
+    }
+    
+    .contact-map{
+        margin-left: 20px;
+        margin-bottom: 20px;
+        height: 400px;
+        width: 50%;
+    }
+    .getin{
+        text-align: center;
+        font-size: 26px;
+        font-family: 'Courier New', Courier, monospace;
+        color: black;
+        padding-top:20px;
+    }
+    .address-div{
+        position: absolute;
+        right: 350px;
+        top: 70px;
+    }
+    .where{
+        font-family: 'Courier New', Courier, monospace;
+        font-size: 20px;
+        color: black;
+        padding-bottom: 20px;
+    }
+    .contact-address{
+        font-family: 'Courier New', Courier, monospace;
+        font-size: 16px;
+        color: black;
+        padding-top: 20px;
+    }
+    .tel-div{
+        position: absolute;
+        right: 330px;
+        top: 200px;
+    }
+    .contact-contact{
+        font-size: 20px;
+        font-family: 'Courier New', Courier, monospace;
+        color: black;
+        padding-left: 80px;
+    }
+    .contact-tel-icon, .contact-email-icon{
+        text-decoration: none;
+        color: black;
+        margin-left: 80px;
+    }
+   
+    .contact-email-address,.contact-tel-number{
+        padding-left: 10px;
+    }
+    .contact-email-address:hover,.contact-tel-number:hover,
+    .contact-tel-icon:hover, .contact-email-icon:hover{
+        color: blue;
+    }
+    .child-div{
+        position: absolute;
+        right: 290px;
+        top: 320px;
+    }
+
+    .contact-form-div{
+        display: grid;
+        grid-template-rows: 1fr 1fr;
+        background-color: rgb(176, 118, 176);
+        margin-bottom: -18px;
+    }
+
+    .contact-logo{
+        border-radius: 20px;
+        height: auto;
+        max-width: 200px;
+        margin-top: 10px;
+        margin-left: 500px;
+        margin-bottom: 30px;
+    }
+
+
+    .contact-form, .form-group { 
+        display: flex;  /* turn this into a flex container */
+        flex-direction: column;/* vertically align label and input/textarea */
+        margin-left:  100px;
+        margin-right: 100px;
+        margin-top: -50px;
+    }
+    
+    .contact-form input{
+        padding-top: 5px;
+        padding-bottom: 5px;
+        width: 800px;
+        height: 30px;
+        margin-bottom: 60px;
+    }
+    /*overriding the style for input and label tags of submit*/
+    .contact-form input[type='submit']{
+        height: 40px;
+        width: 80px;
+        background-color:white;
+        margin-left: 380px;
+        margin-top: 20px;
+    }
+
+    .contact-paragraph{
+        margin-left: 540px;
+        font-size: 20px;
+        font-family: 'Courier New', Courier, monospace;
+        color: black;
+    }
+    .contact-form-div p{
+        font-size: 15px;
+        font-family: 'Courier New', Courier, monospace;
+        color: black;
+        margin-left: 420px;
+        margin-top: -120px;
+    }
+    .form-group textarea{
+        width: 800px;
+        height: 100px;
+        padding-top: 5px;
+        margin-bottom: 60px;
+    }
+
+    .contact-button:not([disable]):hover{
+        background: transparent;
+        color:blue;
+        background-color: rgb(193, 193, 93);
+    }
+    
+    .contact-us{
+        margin-left: 30px;
+        margin-top: 50px;
+        margin-bottom: 50px;
+    }
+    
+    .contact-us .address{
+        margin-left: 40px;
+        font-size: 16px;
+        color:black;
+    }
+    
+    .address:hover{
+        color: blue;
+    }
+    table th{
+        padding-right: 10px;
+        
+    }
+    table td{
+        padding-right:10px ;
+    } 
+    
+    }
+    
+
+@media (max-width: 780px) {
+    .alert {
+        position: absolute;
+        top: 210px;
+        left: 10px;
+        right: 10px;
+        color: white;
+        font-size: 16px;
+    }
+    .contact-div{
+        background-color: rgb(175, 175, 166);
+        height: 350px;
+        width: 100%;
+        top: 0;
+        left: 0;
+        position:relative;
+    }
+    .contact-title{
+        font-size: 40px;
+        font-family: 'Courier New', Courier, monospace;
+        color: black;
+        position: absolute;
+        top: 100px;
+        left: 20px;
+    }
+    .contact-title span{
+        font-size: 30px;
+        font-family: 'Courier New', Courier, monospace;
+        color: black;
+        position: absolute;
+        top: 40px;
+        left: 35px;
+    }
+
+    .contact-text{
+        font-size: 16px;
+        font-family: 'Courier New', Courier, monospace;
+        color: black;
+        position: absolute;
+        left: 5px;
+        top: 220px;
+    }
+    .span1{
+        margin-left: 10px;
+    }
+    .span2{
+        margin-left: 30px;
+    }
+    .in-touch i {
+        position: absolute;
+        top: 292px;
+        left: 60px;
+        font-size: 26px;
+        transform: rotate(-85deg);
+        padding: 0.5rem;
+        background-color: var(--light-grey);
+        border-radius: 10px;
+        }
+    .in-touch a{
+        text-decoration: none;
+        color: black;
+        font-family: 'Courier New', Courier, monospace;
+        font-size: 26px;
+        position: absolute;
+        top: 300px;
+        left: 90px;
+    }
+    .in-touch:hover,.in-touch:hover a{
+        color: blue;
+    }
+
+    .tel-address-div{
+        display: grid;
+        grid-template-rows: repeat(3,1);
+    }
+    
+    .contact-map{
+        margin: 5px 20px;
+        height: 200px;
+        width: 80%;
+    }
+    .getin{
+        margin: 20px 10px;
+        font-size: 18px;
+        font-family: 'Courier New', Courier, monospace;
+        color: black;
+    }
+    .address-div{
+       margin: 5px 20px ;
+    }
+    .where{
+        font-family: 'Courier New', Courier, monospace;
+        font-size: 20px;
+        color: black;
+        padding-bottom: 20px;
+    }
+    .contact-address{
+        font-family: 'Courier New', Courier, monospace;
+        font-size: 16px;
+        color: black;
+        padding-top: 20px;
+    }
+    .tel-div{
+       margin: 5px 20px;
+    }
+    .contact-contact{
+        font-size: 20px;
+        font-family: 'Courier New', Courier, monospace;
+        color: black;
+    }
+    .contact-tel-icon, .contact-email-icon{
+        text-decoration: none;
+        color: black;
+    }
+   
+    .contact-email-address,.contact-tel-number{
+        padding-left: 10px;
+    }
+    .contact-email-address:hover,.contact-tel-number:hover,
+    .contact-tel-icon:hover, .contact-email-icon:hover{
+        color: blue;
+    }
+    .child-div{
+        margin: 5px 20px;
+    }
+
+    .contact-form-div{
+        display: grid;
+        grid-template-rows: 1fr 1fr;
+        background-color: rgb(176, 118, 176);
+        margin-bottom: 21px;
+        border-bottom: 1px solid black;
+    }
+
+    .contact-logo{
+        border-radius: 20px;
+        height: auto;
+        max-width: 200px;
+        margin-top: 10px;
+        margin-left: 90px;
+    }
+
+    .contact-paragraph{
+        margin-top: 30px;
+        margin-left: 120px;
+    }
+    .contact-form-div p{
+        margin-left: 50px;
+        margin-top: -80px;
+    }
+    
+    .contact-form input{
+        margin-bottom: 20px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        width: 240px;
+    }
+
+    .contact-form, .form-group { 
+        display: flex;
+        flex-direction: column;  /* turn this into a flex container */
+        align-items: flex-start;  /* vertically align label and input/textarea */
+        margin-bottom: 15px;  /* add some spacing between each form-group */
+        margin-left:30px;
+        margin-top: -20px;
+    }
+    
+    .contact-form input[type='submit']{
+        height: 40px;
+        width: 100px;
+        background-color:white;
+        margin-bottom: 40px;
+    }
+    .contact-form textarea{
+        margin-bottom: 40px;
+        width: 240px;
+        height: 100px;
+    }
+    .contact-button:not([disable]):hover{
+        background: transparent;
+        background-color: rgb(193, 193, 93);
+        color:blue;
+    }
+    .contact-us{
+        margin-left: 10px;
+    }
+    .contact-us .address{
+        font-size: 16px;
+        color: black;
+        padding-left: 10px;
+    }
+    
+    .address:hover{
+        color: blue;
+    }
+
+    table th{
+        padding-right: 10px;
+        
+    }
+    table td{
+        padding-right:10px ;
+    }
+    
+    }

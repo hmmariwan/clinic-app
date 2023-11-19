@@ -1,0 +1,24 @@
+{% extends 'web/index.html' %}
+{% load static %}
+
+{% block title %} 
+Cosmetic dentistry
+{% endblock %}
+
+{% block css %}
+<link href="{% static 'CSS/cosmetic-dentistry-style.css' %}" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+<div class="cosmetic-div">
+
+</div>
+
+<h2>Teeth whitening</h2>
+<img src="{% static 'images/Teeth whitening.jpg' %}" alt="Teeth whitening image is missing" class="teeth-whitening">
+<img src="{% static 'images/natural teeth whitening.jpg' %}" alt="natural teeth whitening image is missing" class="teeth-whitening">
+<img src="{% static 'images/teeth whiteningg.jpg' %}" alt="best teeth whitening image is missing" class="teeth-whitening">
+
+
+{% endblock %}
+

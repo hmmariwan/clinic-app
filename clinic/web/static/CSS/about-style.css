@@ -1,0 +1,217 @@
+@media (min-width:781px){
+    .about-div{
+        background-color: rgb(175, 175, 166);
+        height: 350px;
+        width: 100%;
+        top: 0;
+        left: 0;
+        position:relative;
+    }
+    
+    .child-div1{
+        position: absolute;
+        margin-left: 293px;
+        margin-top: 120px;
+        font-family: 'Courier New', Courier, monospace;
+        font-size: 50px;
+        color: black;
+
+    }
+    .child-div2{
+        position: absolute;
+        margin-left: 300px;
+        margin-top: 160px;
+        font-family: 'Courier New', Courier, monospace;
+        font-size: 50px;
+        color: black;
+    }
+    .child-div4{
+        position: absolute;
+        margin-left: 300px;
+        margin-top: 220px;
+        font-family: 'Courier New', Courier, monospace;
+        font-size: 16px;
+        color: black;
+    }
+    .child-div3{
+        position: absolute;
+        margin-top: 290px;
+        padding-left: 345px;
+    }
+    .child-div3 a{
+        text-decoration: none;
+        color: black;
+        font-family: 'Courier New', Courier, monospace;
+        font-size: 30px;
+    }
+    .child-div3 a:hover{
+        color:blue;
+    }
+    .about-title{
+        font-family: 'Courier New', Courier, monospace;
+        font-size: 16px;
+        color: black;
+        padding-left: 10px;
+        margin-top: 30px;
+    }
+    .about-title strong{
+        padding-left: 450px;
+        font-family: 'Courier New', Courier, monospace;
+        font-size: 20px;
+        color: black;
+    }
+    .team-div{
+        display: grid;
+        grid-template-rows: 1fr 1fr;
+        height: 400px;
+        margin-top:30px;
+        margin-bottom: -30px;
+        background-color:rgb(195, 169, 169);
+        border-bottom: 1px solid black;
+    }
+    .horizontal-div{
+        display:grid;
+        grid-template-columns: repeat(4,1fr);
+        
+    }
+    .vertical-div{
+        display: flex;
+        justify-content: center;
+    }
+    a.doctor{
+       display: block;
+       height: 100%;
+       width: 100%;
+       text-decoration: none;
+       padding-left: 90px;  
+    }
+    .vertical-div:hover,.vertical-div:hover .fa-user, .vertical-div:hover .team-name{
+        background-color:white;
+        color: black;
+    }
+    
+    
+    .team-name {
+        color: white;
+        margin-left: -30px;
+        font-size: 14px;
+    }
+    .team-expert{
+        margin-left: -40px;
+    }
+    .fa-user{
+        padding-top: 10px;
+        color:white;
+        font-size: 120px;
+    }
+    }
+
+    @media (max-width: 780px){
+    .about-div{
+        background-color: rgb(175, 175, 166);
+        height: 350px;
+        width: 100%;
+        top: 0;
+        left: 0;
+        position:relative;
+    }
+    
+    .child-div1{
+        position: absolute;
+        margin-left: 10px;
+        margin-top: 50px;
+        font-family: 'Courier New', Courier, monospace;
+        font-size: 30px;
+        color: black;
+
+    }
+    .child-div2{
+        position: absolute;
+        margin-left: 40px;
+        margin-top: 100px;
+        font-family: 'Courier New', Courier, monospace;
+        font-size: 30px;
+        color: black;
+    }
+    .child-div4{
+        position: absolute;
+        margin-left: 20px;
+        margin-top: 180px;
+        font-family: 'Courier New', Courier, monospace;
+        font-size: 20px;
+        color: black;
+    }
+    .child-div3{
+        position: absolute;
+        margin-top: 280px;
+        padding-left: 50px;
+    }
+    .child-div3 a{
+        text-decoration: none;
+        color: black;
+        font-family: 'Courier New', Courier, monospace;
+        font-size: 30px;
+    }
+    .child-div3 a:hover{
+        color:blue;
+    }
+    
+    .about-title {
+        font-family: 'Courier New', Courier, monospace;
+        font-size: 20px;
+        color: black;
+        padding-left: 30px;
+    }
+    .about-text{
+        font-family: 'Courier New', Courier, monospace;
+        font-size: 16px;
+        color: black;
+        margin:0 5px;
+    }
+    .team-div{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        margin-top:30px;
+        background-color:rgb(195, 169, 169);
+        border-bottom: 1px solid black;
+    }
+    
+    .horizontal-div{
+        display:grid;
+        grid-template-rows: repeat(4,1fr);
+        
+    }
+    
+    a.doctor{
+       display: block;
+       height: 100%;
+       width: 100%;
+       text-decoration: none;
+       padding-left: 20px;  
+    }
+    .vertical-div:hover,.vertical-div:hover .fa-user, .vertical-div:hover .team-name{
+        background-color:white;
+        color: black;
+    }
+    
+    
+    .team-name {
+        color:white;
+        margin-left: 5px;
+        font-size: 14px;
+        font-family: 'Courier New', Courier, monospace;
+    }
+    .team-expert{
+        font-size: 14px;
+        font-family: 'Courier New', Courier, monospace;
+        color: white;
+    }
+    .fa-user{
+        padding-top: 10px;
+        color:white;
+        font-size: 90px;
+        padding-left: 30px;
+
+    }
+    
+    }

@@ -1,0 +1,125 @@
+@media (min-width:781px) {
+    .alert {
+        position: absolute;
+        top: 30px;
+        left: 270px;
+        color: white;
+        font-size: 18px;
+    }
+    .appointment-form-div{
+        background-color: rgb(176, 118, 176);
+        margin-bottom: -36px;
+    }
+    form{
+        display: flex;
+        flex-direction: column;
+        padding: 30px 80px;
+        
+    }
+    input, #patient-type, #treatment, #find-us, textarea{ /*applying global styles to input & id selectors*/
+        height: 40px;
+        margin-bottom: 15px;
+    }
+    textarea,#data,#marketing{
+        height: initial;
+    }
+    #data,#marketing{
+        margin-left: -1040px;
+    }
+    .appointment-text{
+        font-family: 'Courier New', Courier, monospace;
+        font-size:16px ;
+        color: black;
+        padding-left: 20px;
+        margin-top: -30px;
+        padding-bottom: 15px;
+    }
+    button{
+        width: 100px;
+        height: 50px;
+        background-color: white;
+        margin-left: 400px;
+    }
+    button:hover{
+        color: blue;
+        background-color:rgb(193, 193, 93) ;
+    }
+    .appointment-page{
+        font-family: 'Courier New', Courier, monospace;
+        font-size: 20px;
+        color: black;
+        margin-top: -120px;
+        margin-left: 400px;
+    }
+    .booking-fill{
+        margin-left: -90px;
+    }
+    
+        
+    }
+
+    @media (max-width:780px) {
+    .alert {
+        position: absolute;
+        top: 210px;
+        left: 10px;
+        right: 10px;
+        color: white;
+        font-size: 16px;
+    }
+    .appointment-form-div{
+        background-color: rgb(176, 118, 176);
+        margin-bottom: 3px;
+        border-bottom: 1px solid black;
+    }
+    form{
+        display: flex;
+        flex-direction: column;
+        padding: 20px 20px;
+        
+    }
+    input, #patient-type, #treatment, #find-us, textarea{ /*applying global styles to input & id selectors*/
+        height: 40px;
+        margin-bottom: 15px;
+    }
+    textarea,#data,#marketing{
+        height: initial;
+    }
+    #data,#marketing{
+        margin-left:-300px;
+    }
+    .appointment-text{
+        font-family: 'Courier New', Courier, monospace;
+        color: black;
+        padding-left: 20px;
+        margin-top: -30px;
+        padding-bottom: 15px;
+    }
+    button{
+        width: 100px;
+        height: 50px;
+        background-color:white;
+        margin-left: 100px;
+    }
+    button:hover{
+        color:blue;
+        background-color:rgb(193, 193, 93) ;
+    }
+    .appointment-page{
+        font-family: 'Courier New', Courier, monospace;
+        color: black;
+        font-size: 18px;
+        margin-top: -120px;
+        margin-left: 40px;
+    }
+    .appointment-page strong{
+        margin-left: 50px;
+    }
+    .den-clinic{
+        margin-left: 70px;
+    }
+    .booking-fill{
+        padding-left: -30px;
+    }
+    
+    }

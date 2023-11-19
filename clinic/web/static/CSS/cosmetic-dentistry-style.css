@@ -1,0 +1,14 @@
+.cosmetic-div{
+    background-color: rgb(175, 175, 166);
+    height: 350px;
+    width: 100%;
+    top: 0;
+    left: 0;
+    position:relative;
+}
+.teeth-whitening{
+    height: 300px;
+    width: 300px;
+    border-radius: 20px;
+    margin-left: 30px;
+}
