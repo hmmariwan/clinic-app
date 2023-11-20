@@ -17,7 +17,6 @@ Cheapest Dental Clinic is a website that helps patients to find a dentist in Lon
 
 ![homemain](clinic/web/static/screenshots/home.png) 
 
-
 ![homeform](clinic/web/static/screenshots/homeform.png) 
 
 
@@ -80,7 +79,7 @@ I also used PythonAnywhere to deploy the website which worked, but when the user
 * I got the contents of the site form Zental Dental Practice.  
 * I used the Font Awsome icon for the dropdown menu and staff.  
 * I used Google Font for the calendar icon.  
-* W3Schools and AI generator helped with converting the design of the page. from large screen to small screen.  
+* W3Schools and AI generator helped with converting the design of the page from large screen to small screen.  
 
 ## Media  
 *I used Google to get all images and logos.  
