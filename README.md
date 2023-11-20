@@ -1,6 +1,6 @@
 # Cheapest Dental Clinic 
 
-Cheapest Dental Clinic is a website that helps patients to find a dentist in London. The patients will be able to contact the practice by phone, email or completing an online form. The patients will also be able to find out informations about the clinic, their team and the treatment costs.  
+Cheapest Dental Clinic is a website that helps patients to find a dentist in London. The patients will be able to contact the practice by phone, email or completing an online form. The patients will also be able to find out informations about the clinic, their team and the treatment costs. 
 
 ![home](clinic/web/static/screenshots/home-page.png) 
 
@@ -16,7 +16,6 @@ Cheapest Dental Clinic is a website that helps patients to find a dentist in Lon
 * Home page informs the user about where the practice is located and for how long they have been helping the community to keep their teeth and gum healthy. There are some links which will allow the user to fill in an online form, call or email the practice. Some of the practice achievements are written on the middle of this page with a button of filling an online form – which is repeated on several pages. There are some quick links, a link of external site and information about their opening hours on the bottom of the page. 
 
 ![homemain](clinic/web/static/screenshots/home.png) 
-
 
 ![homeform](clinic/web/static/screenshots/homeform.png) 
 
@@ -80,7 +79,7 @@ I also used PythonAnywhere to deploy the website which worked, but when the user
 * I got the contents of the site form Zental Dental Practice.  
 * I used the Font Awsome icon for the dropdown menu and staff.  
 * I used Google Font for the calendar icon.  
-* W3Schools and AI generator helped with converting the design of the page. from large screen to small screen.  
+* W3Schools and AI generator helped with converting the design of the page from large screen to small screen.  
 
 ## Media  
 *I used Google to get all images and logos.  
