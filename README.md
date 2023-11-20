@@ -1,6 +1,6 @@
 # Cheapest Dental Clinic 
 
-Cheapest Dental Clinic is a website that helps patients to find a dentist in London. The patients will be able to contact the practice by phone, email or completing an online form. The patients will also be able to find out informations about the clinic, their team and the treatment costs.  
+Cheapest Dental Clinic is a website that helps patients to find a dentist in London. The patients will be able to contact the practice by phone, email or completing an online form. The patients will also be able to find out informations about the clinic, their team and the treatment costs. 
 
 ![home](clinic/web/static/screenshots/home-page.png) 
 
