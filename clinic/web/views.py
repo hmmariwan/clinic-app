@@ -70,8 +70,11 @@ def new_patients(request):
         return redirect('new_patients')
     return render(request,'web/new_patients.html')
 
-def general_dentistry(request):
-    return render(request,'web/general_dentistry.html')
+def fillings(request):
+    return render(request,'web/fillings.html')
+
+def dental_hygiene(request):
+    return render(request,'web/dental_hygiene.html')
 
 def cosmetic_dentistry(request):
     return render(request,'web/cosmetic_dentistry.html')

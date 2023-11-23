@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}  {% endblock %}</title>
     {% block css %}{% endblock %}
-    <link href="{% static 'CSS/base-style.css' %}" rel="stylesheet">
+    <link href="{% static 'CSS/ba.css' %}" rel="stylesheet">
 
     <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet"/>
 
@@ -15,6 +15,11 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body>
+
+   <style>
+   
+   </style>
+
     <div class="header-div">
         <header>
             <div class="header-div-logo">
@@ -32,8 +37,35 @@
                     <i class="fa-solid fa-phone"></i><span class="tel-number">Call us</span>
                 </a>
             </div>
+            <div class="header-like-div"> 
+                <details>
+                    <summary>I am interested in ... </summary>
+                    <ul>
+                        <div class="header-like-div2">
+                            <div class="like-child-div">
+                                <li><a href="{% url 'fillings' %}">FILLINGS</a></li>
+                            </div>
+                            <div class="like-child-div">
+                                <li><a href="{% url 'dental_hygiene' %}">DENTAL HYGIENE</a></li>
+                            </div>
+                            <div class="like-child-div">
+                                <li><a href="{% url 'fillings' %}">FILLINGS</a></li>
+                            </div>
+                            <div class="like-child-div">
+                                <li><a href="{% url 'dental_hygiene' %}">DENTAL HYGIENE</a></li>
+                            </div>
+                            <div class="like-child-div">
+                                <li><a href="{% url 'fillings' %}">FILLINGS</a></li>
+                            </div>
+                            <div class="like-child-div">
+                                <li><a href="{% url 'dental_hygiene' %}">DENTAL HYGIENE</a></li>
+                            </div>
+                        </div>
+                    </ul>
+                </details>
+            </div>
             <div class="header-appointment-div">
-                <a href="{% url 'new_patients' %}" class="header-appointment-button"><p>Book Now</p></a>
+                <a href="{% url 'new_patients' %}" class="header-appointment-button"><span>Book Appointment</span></a>
             </div>
             
             <div class="nav-div">
@@ -47,8 +79,19 @@
                             <li class="dropdown"> 
                                 <a href="#" class="base-nav iarrow">TREATMENT<i class="fa-solid fa-square-caret-down"></i> </a>
                                 <ul class="dropdown-content">
-                                    <div class="dropdown-container"> 
-                                        <li><a href="{% url 'general_dentistry' %}" class="base-nav">GENERAL DENTISTRY</a></li>
+                                    <div class="dropdown-container">
+
+                                        <li class="dropdown2"> 
+                                            <a href="#" class="base-nav iarrow">GENERAL DENTISTRY<i class="fa-solid fa-square-caret-down"></i> </a>
+                                            <ul class="dropdown-content2">
+                                                <div class="dropdown-container2"> 
+                                                    <li><a href="{% url 'fillings' %}" class="base-nav">FILLINGS</a></li>
+                                                    <li><a href="{% url 'dental_hygiene' %}" class="base-nav">DENTAL HYGIENE</a></li>
+                                                </div>
+                                            </ul>
+                                        </li>
+                                        
+                                        
                                         <li><a href="{% url 'cosmetic_dentistry' %}" class="base-nav">COSMETIC DENTISTRY</a></li>
                                         <li><a href="{% url 'specialist_dentistry' %}" class="base-nav" >SPECIALIST DESTISTRY</a></li>
                                     </div>

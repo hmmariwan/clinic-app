@@ -1,3 +1,51 @@
+    .finance-explained{
+        margin-top: 140px;
+        text-align: center;
+        color: black;
+        font-family: 'Courier New', Courier, monospace;
+        font-size: 20px;
+    }
+    .arrow {
+        color:black;
+        font-family: 'Courier New', Courier, monospace;
+        font-size: 16px;
+        border-bottom: 1px solid black;
+        display: flex;
+        justify-content: space-between; /* Aligns content and arrow icon on opposite sides */
+        align-items: center;
+        padding-bottom: 10px;
+        cursor:pointer;
+    }
+
+    .arrow::after {
+        content: '\25BC';
+        display: inline-block;
+        justify-content: first baseline;
+        transform: rotate(0deg);
+        transition: transform 0.2s ease-in-out;
+        color:rgb(176, 118, 176);
+    }
+
+    .arrow.active::after {
+        transform: rotate(180deg);
+    }
+
+    .content {
+        display: none;
+        padding: 10px;
+        margin-top: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+    .content p{
+        color:black;
+        font-family: 'Courier New', Courier, monospace;
+        font-size: 16px;
+    }
+
+    .content.active {
+        display: block;
+    }
 @media screen and (min-width: 781px){
     .private-fees-div{
         background-color: rgb(175, 175, 166);
@@ -81,6 +129,7 @@
     .table2 tbody tr:nth-child(odd) {
         background-color: rgb(182, 164, 182); /* Color for odd rows in the body */
     }
+    
     
     }
 

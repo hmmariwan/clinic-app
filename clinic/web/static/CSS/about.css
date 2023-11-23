@@ -12,26 +12,26 @@
         position: absolute;
         margin-left: 293px;
         margin-top: 120px;
-        font-family: 'Courier New', Courier, monospace;
+        font-family: var(--font-family);
         font-size: 50px;
-        color: black;
+        color:var(--font-color);
 
     }
     .child-div2{
         position: absolute;
         margin-left: 300px;
         margin-top: 160px;
-        font-family: 'Courier New', Courier, monospace;
+        font-family: var(--font-family);
         font-size: 50px;
-        color: black;
+        color:var(--font-color);
     }
     .child-div4{
         position: absolute;
         margin-left: 300px;
         margin-top: 220px;
-        font-family: 'Courier New', Courier, monospace;
+        font-family: var(--font-family);
         font-size: 16px;
-        color: black;
+        color: var(--font-color);
     }
     .child-div3{
         position: absolute;
@@ -40,25 +40,25 @@
     }
     .child-div3 a{
         text-decoration: none;
-        color: black;
-        font-family: 'Courier New', Courier, monospace;
+        color:var(--font-color);
+        font-family: var(--font-family);
         font-size: 30px;
     }
     .child-div3 a:hover{
         color:blue;
     }
     .about-title{
-        font-family: 'Courier New', Courier, monospace;
+        font-family: var(--font-family);
         font-size: 16px;
-        color: black;
+        color:var(--font-color);
         padding-left: 10px;
         margin-top: 30px;
     }
     .about-title strong{
         padding-left: 450px;
-        font-family: 'Courier New', Courier, monospace;
+        font-family: var(--font-family);
         font-size: 20px;
-        color: black;
+        color:var(--font-color);
     }
     .team-div{
         display: grid;
@@ -67,7 +67,7 @@
         margin-top:30px;
         margin-bottom: -30px;
         background-color:rgb(195, 169, 169);
-        border-bottom: 1px solid black;
+        border-bottom:var(--border);
     }
     .horizontal-div{
         display:grid;
@@ -89,8 +89,6 @@
         background-color:white;
         color: black;
     }
-    
-    
     .team-name {
         color: white;
         margin-left: -30px;
@@ -120,26 +118,26 @@
         position: absolute;
         margin-left: 10px;
         margin-top: 50px;
-        font-family: 'Courier New', Courier, monospace;
+        font-family: var(--font-family);
         font-size: 30px;
-        color: black;
+        color: var(--font-color);
 
     }
     .child-div2{
         position: absolute;
         margin-left: 40px;
         margin-top: 100px;
-        font-family: 'Courier New', Courier, monospace;
+        font-family: var(--font-family);
         font-size: 30px;
-        color: black;
+        color:var(--font-color);
     }
     .child-div4{
         position: absolute;
         margin-left: 20px;
         margin-top: 180px;
-        font-family: 'Courier New', Courier, monospace;
+        font-family: var(--font-family);
         font-size: 20px;
-        color: black;
+        color: var(--font-color);
     }
     .child-div3{
         position: absolute;
@@ -148,8 +146,8 @@
     }
     .child-div3 a{
         text-decoration: none;
-        color: black;
-        font-family: 'Courier New', Courier, monospace;
+        color: var(--font-color);
+        font-family: var(--font-family);
         font-size: 30px;
     }
     .child-div3 a:hover{
@@ -157,15 +155,15 @@
     }
     
     .about-title {
-        font-family: 'Courier New', Courier, monospace;
+        font-family: var(--font-family);
         font-size: 20px;
-        color: black;
+        color:var(--font-color);
         padding-left: 30px;
     }
     .about-text{
-        font-family: 'Courier New', Courier, monospace;
+        font-family: var(--font-family);
         font-size: 16px;
-        color: black;
+        color: var(--font-color);
         margin:0 5px;
     }
     .team-div{
@@ -173,7 +171,7 @@
         grid-template-columns: 1fr 1fr;
         margin-top:30px;
         background-color:rgb(195, 169, 169);
-        border-bottom: 1px solid black;
+        border-bottom:var(--border);
     }
     
     .horizontal-div{
@@ -199,11 +197,11 @@
         color:white;
         margin-left: 5px;
         font-size: 14px;
-        font-family: 'Courier New', Courier, monospace;
+        font-family: var(--font-family);
     }
     .team-expert{
         font-size: 14px;
-        font-family: 'Courier New', Courier, monospace;
+        font-family: var(--font-family);
         color: white;
     }
     .fa-user{

@@ -1,7 +1,17 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,600,700,800,900&display=swap');
-        
+/* the * selector applies the following styles to every element in HTML*/       
+* {
+    margin: 0;
+    padding: 0;
+}
+/*the :root special selector is used to create some variables which can be used at all stages*/
+:root{
+    --font-family:'Times New Roman', Times, serif;
+    --font-color:black;
+    --border:1px solid black;
+}
+
 @media screen and (min-width: 781px) {
- 
 .header-div {
     height: 250px;
     width: 100%;
@@ -15,15 +25,15 @@
 }
 .header-name{
     font-size: 26px;
-    font-family: 'Courier New', Courier, monospace;
-    color:black;
+    font-family: var(--font-family);
+    color:var(--font-color);
     margin-left: 215px;
     margin-top: -100px;
 }
 .header-clinic{
     font-size: 18px;
-    font-family: 'Courier New', Courier, monospace;
-    color: black;
+    font-family: var(--font-family);
+    color: var(--font-color);
     margin-left: 215px;
 }
 .header-logo, .logos-div img{
@@ -35,13 +45,13 @@
 .header-div-email{
     position: absolute;
     top: 55px;
-    right: 450px;
+    right: 600px;
     text-align: center;
 }
 .header-div-tel{
     position: absolute;
     top: 55px;
-    right: 350px;
+    right: 500px;
     text-align: center;
 }
 .tel-icon, .email-icon{
@@ -60,14 +70,94 @@
     color:blue;
 }
 .header-appointment-div{
+    display: flex;
     position: absolute;
     top: 60px;
-    right: 35px;
-    height: 50px;
-    width: 250px;
+    right: 20px;
+    height: 45px;
+    width: 200px;
     background-color:white;
     border-radius: 15px;
+    cursor: pointer;
 }
+a.header-appointment-button{
+    text-decoration: none;
+    padding-left: 40px;
+    padding-top: 15px;
+    font-family: var(--font-family);
+    font-size: 16px;
+    color: var(--font-color);
+}
+.base-appointment-button {
+    padding: 10px 20px; /*creating some space of 10px on top & buttom and 20px on right & left of Book Now*/
+    margin-left: 160px;
+    font-size: 20px;
+    cursor: pointer;
+    font-family: var(--font-family);
+    text-decoration: none;
+    background-color:white;
+    color:var(--font-color);
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 9px #999;
+}
+.base-appointment-button:hover,.header-appointment-div:hover,
+.header-appointment-div:hover span{
+    background-color:rgb(193, 193, 93);
+    color:blue;
+}
+.header-like-div{
+    position: absolute;
+    top: 60px;
+    right: 250px;
+    height: 30px;
+    width: 200px;
+    background-color: white;
+    border-radius: 15px;
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-bottom: 5px;
+    cursor: pointer;
+}
+.header-like-div2{
+    position: relative;
+    margin-top: 20px;
+    z-index: 1;
+}
+.like-child-div{
+    background-color:white;
+    padding: 10px 10px;
+    border-bottom: var(--border);
+}
+.like-child-div li{
+    list-style-type: none;
+}
+.like-child-div:hover,.like-child-div:hover a{
+    background-color:rgb(193, 193, 93);
+    color: blue;
+}
+.header-like-div a{
+    text-decoration: none;
+    font-family: var(--font-family);
+    color: var(--font-color);
+    font-size: 16px;
+}
+summary{
+    font-family: var(--font-family);
+    color:var(--font-color);
+    font-size: 18px;
+}
+details > summary {
+    list-style: none;
+  }
+  
+details > summary::after {
+    content: '\25B6';
+    display: inline-block;
+    transform: rotate(90deg);
+    margin-right: 6px;
+  }
+  
 
 .nav-div{
     position: absolute;
@@ -85,32 +175,29 @@
     flex-direction: row;
     align-items: center;
     transition: 0.5s;   
-    overflow: hidden;
-    z-index: 100; /* high z-index to ensure it's on top */
 }
-.menu li{
+.menu li, .menu ul{
     list-style-type: none;
 }
-.menu ul{
-    list-style-type: none;
-}
+
 .menu li a{   /*to style a hyperlink in a menu*/
-    color:black;
     text-decoration: none;
     display: block;
     padding: 40px 25px;
     font-size: 20px;
     line-height: 1;
     transition: 0.3s;
-    font-family: 'Courier New', Courier, monospace;
+    font-family: var(--font-family);
+    color: var(--font-color);
 }
 .base-nav:hover{
     background: transparent;
+    background-color: rgb(176, 118, 176);
     color:blue;
 }
 
 .dropdown-container{
-    background-color:rgb(176, 118, 176);
+    background-color:white;
     margin-left: -5px;
     margin-top: -40px;
 }
@@ -125,7 +212,8 @@
     display: none;
     position: absolute;
     padding: 0; 
-    font-family: 'Courier New', Courier, monospace;
+    font-family: var(--font-family);
+    color: var(--font-color);
     z-index: 1;
 }
 
@@ -135,11 +223,49 @@
 }
 
 .dropdown-container li a{/*to style all hyperlinks in a dropdown menu*/
-    color:black;
+    color:var(--font-color);
+    font-family: var(--font-family);
     padding: 10px;
     
 }
 .dropdown i{
+    padding-left: 5px;
+    font-size: 18px;
+}
+
+.dropdown-container2{
+    background-color:gray;
+    margin-left: 218px;
+    margin-top: -40px;
+    width: 195px;
+}
+
+.dropdown2:hover .dropdown-content2 { /*to show all hyperlinks in a dropdown menu*/
+    display: block;
+    margin-left: 30px;
+    
+}
+
+.dropdown-content2 {
+    display: none;
+    position: absolute;
+    padding: 0; 
+    font-family: var(--font-family);
+    color: var(--font-color);
+    z-index: 1;
+}
+
+.dropdown-container2 li {
+    display: block;
+}
+
+.dropdown-container2 li a{/*to style all hyperlinks in a dropdown menu*/
+    color:var(--font-color);
+    font-family: var(--font-family);
+    padding: 10px;
+    
+}
+.dropdown2 i{
     padding-left: 5px;
     font-size: 18px;
 }
@@ -232,45 +358,10 @@
     color:rgb(193, 193, 93); 
 }
 
-
-.base-appointment-button {
-    padding: 10px 20px; /*creating some space of 10px on top & buttom and 20px on right & left of Book Now*/
-    margin-left: 160px;
-    font-size: 20px;
-    cursor: pointer;
-    font-family: 'Courier New', Courier, monospace;
-    text-decoration: none;
-    background-color:white;
-    color: black;
-    border: none;
-    border-radius: 15px;
-    box-shadow: 0 9px #999;
-}
-
-.header-appointment-button{
-    padding-top: 10px;
-    text-align: center;
-    font-size: 20px;
-    cursor: pointer;
-    font-family: 'Courier New', Courier, monospace;
-    text-decoration: none;
-    color:black;
-    border: none;
-    border-radius: 15px;
-    box-shadow: 0 1px #999;
-    width: 260px;
-}
-
-.base-appointment-button:hover, .header-appointment-div:hover, 
-.header-appointment-div:hover a {
-    background-color:rgb(193, 193, 93);
-    color:blue;
-}
-
 .logos-div {
     display: grid;
     grid-template-rows: repeat(2,1fr); 
-    border-top: 1px solid black;
+    border-top: var(--border);
 }
 
 .pacific-image{
@@ -296,7 +387,7 @@ the other two columns, I use grid-template-columns: 2fr 1fr 1fr.*/
 .footer-div{
     display: grid;
     grid-template-columns: repeat(3,1fr);
-    border-top: 1px black;
+    border-top: var(--border);
 }
 .footer{
     position: relative;
@@ -304,29 +395,29 @@ the other two columns, I use grid-template-columns: 2fr 1fr 1fr.*/
     background-color: rgb(176, 118, 176);
     width: 100%;
     height: 40px;
-    border-top: 1px solid black;
+    border-top: var(--border);
     padding-top: 20px;
     
 }
 footer a{
     padding-right: 10px;
     text-decoration: none;
-    color:black;
+    color:var(--font-color);
     font-size: 15px;
-    font-family: 'Courier New', Courier, monospace;
+    font-family: var(--font-family);
 }
 .footer span{
     margin-left: 500px;
     margin-top: -20px;
     font-size: 15px;
-    font-family: 'Courier New', Courier, monospace;
-    color: black;
+    font-family: var(--font-family);
+    color: var(--font-color);
 }
 
 .footer p{
     padding-left: 60px;
-    color: black;
-    font-family: 'Courier New', Courier, monospace;
+    color:var(--font-color);
+    font-family: var(--font-family);
     font-size: 15px;
     margin-top: -18px;
 }
@@ -342,8 +433,8 @@ footer a{
 }
 .footer-div-quicklink li a{
     text-decoration: none;
-    color: black;
-    font-family: 'Courier New', Courier, monospace;
+    color:var(--font-color);
+    font-family: var(--font-family);
 }
 .footer-div-quicklink i{
     transform: rotate(-85deg);
@@ -388,8 +479,8 @@ table th, table td{
 }
 .footer-address a {
     text-decoration: none;
-    color: black;
-    font-family: 'Times New Roman', Times, serif;
+    color:var(--font-color);
+    font-family: var(--font-family);
 }
 .footer-address a:hover {
     text-decoration: underline;
@@ -409,35 +500,45 @@ table th, table td{
 }
 
 @media screen and (min-width:781px) and (max-width:1150px) {
+
 .header-appointment-div{
-    position:absolute;
-    align-items: center;
-    left: 430px;
-    top: 120px;
-    height: 50px;
-    width: 250px;
+    display: flex;
+    position: absolute;
+    top: 150px;
+    left: 540px;
+    height: 45px;
+    width: 200px;
     background-color:white;
     border-radius: 15px;
-    padding-bottom: 10px;
+    cursor: pointer;
 }
+.header-like-div{
+    position: absolute;
+    top: 150px;
+    left: 320px;
+    height: 30px;
+    width: 200px;
+    background-color: white;
+    border-radius: 15px;
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-bottom: 5px;
+    cursor: pointer;
 }
-
-
-@media screen and (min-width:781px) and (max-width:888px) {
-.header-div-tel{
+.header-div-email{
     position: absolute;
     top: 55px;
-    left: 720px;
+    left: 500px;
     text-align: center;
 
 }
-.header-div-email{
+.header-div-tel{
     position: absolute;
     top: 55px;
     left: 600px;
     text-align: center;
 
-}            
+}      
 }
 
 @media screen and (max-width: 780px) {
@@ -456,15 +557,15 @@ table th, table td{
 }
 .header-name{
     font-size: 20px;
-    font-family: 'Courier New', Courier, monospace;
-    color:black;
+    font-family: var(--font-family);
+    color:var(--font-color);
     margin-left: 110px;
     margin-top: -60px;
 }
 .header-clinic{
     font-size: 16px;
-    font-family: 'Courier New', Courier, monospace;
-    color: black;
+    font-family: var(--font-family);
+    color:var(--font-color);
     margin-left: 110px;
 }
 .header-logo, .logos-div img{
@@ -502,17 +603,95 @@ table th, table td{
 }
 
 .header-appointment-div{
-    position:absolute;
-    align-items: center;
+    display: flex;
+    position: absolute;
+    top: 130px;
     left: 60px;
-    top: 120px;
-    height: 50px;
-    width: 250px;
+    height: 45px;
+    width: 200px;
     background-color:white;
     border-radius: 15px;
-    padding-bottom: 10px;
+    cursor: pointer;
+}
+a.header-appointment-button{
+    text-decoration: none;
+    padding-left: 40px;
+    padding-top: 15px;
+    font-family: var(--font-family);
+    font-size: 16px;
+    color: var(--font-color);
+}
+.base-appointment-button {
+    padding: 10px 20px; /*creating some space of 10px on top & buttom and 20px on right & left of Book Now*/
+    margin-left: 160px;
+    font-size: 20px;
+    cursor: pointer;
+    font-family: var(--font-family);
+    text-decoration: none;
+    background-color:white;
+    color:var(--font-color);
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 9px #999;
+}
+.base-appointment-button:hover,.header-appointment-div:hover,
+.header-appointment-div:hover span{
+    background-color:rgb(193, 193, 93);
+    color:blue;
 }
 
+.header-like-div{
+    position: absolute;
+    top: 190px;
+    left: 60px;
+    height: 30px;
+    width: 200px;
+    background-color: white;
+    border-radius: 15px;
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-bottom: 5px;
+    cursor: pointer;
+}
+.header-like-div2{
+    position: relative;
+    margin-top: 20px;
+    z-index: 1;
+}
+.like-child-div{
+    background-color:white;
+    padding: 10px 10px;
+    border-bottom: var(--border);
+}
+.like-child-div li{
+    list-style-type: none;
+}
+.like-child-div:hover,.like-child-div:hover a{
+    background-color:rgb(193, 193, 93);
+    color: blue;
+}
+.header-like-div a{
+    text-decoration: none;
+    font-family: var(--font-family);
+    color: var(--font-color);
+    font-size: 16px;
+}
+summary{
+    font-family: var(--font-family);
+    color:var(--font-color);
+    font-size: 18px;
+}
+details > summary {
+    list-style: none;
+  }
+  
+details > summary::after {
+    content: '\25B6';
+    display: inline-block;
+    transform: rotate(90deg);
+    margin-right: 6px;
+  }
+  
 .menu{                /*to style menu in a small screen */
     justify-content: start;
     flex-direction: column;
@@ -527,26 +706,24 @@ table th, table td{
     padding-top: 90px;
     z-index: 1;
 }
-.menu li{
-    list-style-type: none;
-    
-}
-.menu ul{
+
+.menu li, .menu ul{
     list-style-type: none;
 }
+
 .menu li a{   /*to style a hyperlink in a menu*/
-    color:black;
+    color:var(--font-color);
     text-decoration: none;
     display: block;
     font-size: 18px;
-    font-family: 'Courier New', Courier, monospace;
+    font-family: var(--font-family);
     line-height: 1;
     transition: 0.3s;
     padding: 10px 2px;
-    border-bottom: 1px solid black;
+    border-bottom: var(--border);
 }
 .border{
-    border-top: 1px solid black;
+    border-top: var(--border);
 }
 .base-nav:hover{
     background: transparent;
@@ -554,36 +731,60 @@ table th, table td{
     color:blue;
 }
 
-
 .dropdown-content {
     display: none;
-    position: absolute;
+    position: relative;
     padding: 0; 
-    font-family: 'Courier New', Courier, monospace;
-    z-index: 1;
-
+    font-family: var(--font-family);
+    color: var(--font-color);
+    z-index: 10;
     min-width: 160px;
 }
 .dropdown-container{
-    background-color: rgb(176, 118, 176);
+    background-color:white;
     margin-left: -30px;
 }
-
 .dropdown:hover .dropdown-content { /*to show all hyperlinks in a dropdown menu*/
     display: block;
-    margin-left: 30px;
-    
+    margin-left: 30px; 
 }
-
 .dropdown-container li {
     display: block;
 }
-
 .dropdown-container li a{/*to style all hyperlinks in a dropdown menu*/
     color:black;
     padding: 10px 2px;
-    
 }
+
+.dropdown-content2 {
+    display: none;
+    position: relative;
+    
+    padding: 0; 
+    font-family: var(--font-family);
+    color: var(--font-color);
+    z-index: 1;
+    min-width: 160px;
+}
+.dropdown-container2{
+    background-color:gray;
+    margin-left: -30px;
+}
+.dropdown2:hover .dropdown-content2 { /*to show all hyperlinks in a dropdown menu*/
+    display: block;
+    margin-left: 30px; 
+}
+.dropdown-container2 li {
+    display: block;
+}
+.dropdown-container2 li a{/*to style all hyperlinks in a dropdown menu*/
+    color:black;
+    padding: 10px 2px;
+}
+
+
+
+
 
 .toggle-menu{
     position: absolute;
@@ -669,8 +870,8 @@ table th, table td{
 .quality-div ul{
     padding: 5px 10px;
     font-size: 15px;
-    font-family: 'Courier New', Courier, monospace;
-    color: black;
+    font-family: var(--font-family);
+    color: var(--font-color);
     margin-left: 15px;
 }
 .quality-div ul i{
@@ -681,46 +882,13 @@ table th, table td{
 .quality-div-title{
     margin-left: 70px;
     font-size: 20px;
-    font-family: 'Courier New', Courier, monospace;
+    font-family: var(--font-family);
+    color: var(--font-color);
 }
 .quality-div span{
     margin-left:60px;
 }
 
-.base-appointment-button {
-    padding: 10px 20px; /*creating some space of 10px on top & buttom and 20px on right & left of Book Now*/
-    margin-left: 115px;
-    font-size: 20px;
-    cursor: pointer;
-    font-family: 'Courier New', Courier, monospace;
-    text-decoration: none;
-    background-color: white;
-    color: black;
-    border: none;
-    border-radius: 15px;
-    box-shadow: 0 1px #999;
-    
-}
-
-.header-appointment-button{
-    padding-top: 10px;
-    text-align: center;
-    font-size: 20px;
-    cursor: pointer;
-    font-family: 'Courier New', Courier, monospace;
-    text-decoration: none;
-    color:black;
-    border: none;
-    border-radius: 15px;
-    box-shadow: 0 1px #999;
-    width: 260px;
-}
-
-.base-appointment-button:hover, .header-appointment-div:hover, .header-appointment-div:hover a,
-.booking:hover{ 
-    background-color:rgb(193, 193, 93);
-    color:blue;
-}
 .base-appointment-text{
     margin-left: 120px;
     margin-bottom: 40px;
@@ -754,8 +922,8 @@ table th, table td{
 
 .data-text1,.data-text2{
     font-size: 14px;
-    color: black;
-    font-family: 'Courier New', Courier, monospace;
+    color: var(--font-color);
+    font-family: var(--font-family);
     margin-left: 20px;
     margin-top: -17px;
 }
@@ -811,7 +979,7 @@ table th, table td{
     height: 70px;
     padding-top: 10px;
     padding-bottom: 15px;
-    border-top: 1px solid black;
+    border-top: var(--border);
 }
 .footer a{
     padding-right: 10px;
@@ -832,7 +1000,7 @@ table th, table td{
 .footer-div-quicklink{ 
     background-color:rgb(111, 111, 207);
     margin-bottom: 220px;
-    border-top: 1px solid black;
+    border-top: var(--border);
 }
 .footer-div-quicklink li{
     list-style-type: none;
@@ -841,9 +1009,9 @@ table th, table td{
 }
 .footer-div-quicklink li a{
     text-decoration: none;
-    color: black;
+    color:var(--border);
     font-size: 16px;
-    font-family: 'Courier New', Courier, monospace;
+    font-family: var(--font-family);
 }
 .footer-div-quicklink i{
     transform: rotate(-85deg);
@@ -855,28 +1023,28 @@ table th, table td{
     margin-top: -301px;
     background-color:rgb(111, 111, 207);
     padding-left: 20px;
-    border-top: 1px solid black;
-    border-bottom: 1px solid black;
+    border-top: var(--border);
+    border-bottom: var(--border);
 }
 
 table th, table td{
     padding-right: 10px;
-    font-family: 'Courier New', Courier, monospace;
+    font-family: var(--font-family);
     font-size: 16px;
-    color: black;
+    color: var(--font-color);
 }
 .footer-heading{
     margin-left: 50px;
     font-size: 20px;
-    font-family: 'Courier New', Courier, monospace;
-    color: black;
+    font-family: var(--font-family);
+    color: var(--font-color);
 }
 
 .footer-div-contact{
     margin-top: -221px;
     margin-bottom: 300px;
     background-color:rgb(111, 111, 207);
-    border-top: 1px solid black;
+    border-top: var(--border);
 }
 .footer-div-contact .email-hover{
     position: relative;
@@ -911,8 +1079,8 @@ table th, table td{
 }
 .footer-address a {
     text-decoration: none;
-    color: black;
-    font-family: 'Courier New', Courier, monospace;
+    color:var(--font-color);
+    font-family: var(--font-family);
     font-size: 15px;
 }
 .footer-address a:hover {
