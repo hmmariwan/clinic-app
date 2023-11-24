@@ -4,6 +4,7 @@
     margin: 0;
     padding: 0;
 }
+
 /*the :root special selector is used to create some variables which can be used at all stages*/
 :root{
     --font-family:'Times New Roman', Times, serif;
@@ -292,16 +293,15 @@ details > summary::after {
     background-color: rgb(176, 118, 176);
     display: grid;
     grid-template-columns: repeat(2,1fr); 
-    gap: 20px; /* This adds space between your rows and columns */
     margin-top: 30px;
     margin-bottom: -18px;
 }
 
 .enquire-div{
     margin-top: 160px;
-    margin-right: 20px;
+    margin-right: 30px;
     margin-bottom: 20px;
-    background-color: rgb(193, 193, 93);
+    background-color:rgb(193, 193, 93);
 }
 .enquiry{
     text-align: center;
@@ -356,29 +356,6 @@ details > summary::after {
     margin-left: 210px;
     font-size: 20px; 
     color:rgb(193, 193, 93); 
-}
-
-.logos-div {
-    display: grid;
-    grid-template-rows: repeat(2,1fr); 
-    border-top: var(--border);
-}
-
-.pacific-image{
-    margin-top: -20px;
-}
-
-.horizontal {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr); 
-    
-}
-
-.vertical {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%; 
 }
 
 /*creating 3 column section of equal width
@@ -539,6 +516,59 @@ table th, table td{
     text-align: center;
 
 }      
+}
+
+@media screen and (max-width:1200px){
+    .logos-div {
+        display: grid;
+        grid-template-columns: repeat(2,1fr); 
+        margin-top: -39px;
+    }
+    
+    .horizontal {
+        display: grid;
+        grid-template-rows: repeat(5, 1fr); 
+        margin-top: 5px;
+        gap: 5px; /* Adding some space between the columns */
+    }
+    
+    .vertical {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+    }
+    
+    .horizontal-top, .horizontal-bottom {
+        margin-top: -1px;
+    }
+    .pacific-image{
+        margin-top:-10px;
+    }
+    }
+@media screen and (min-width:1201px){
+    .logos-div {
+        display: grid;
+        grid-template-rows: repeat(2,1fr); 
+        border-top: var(--border);
+    }
+    
+    .pacific-image{
+        margin-top: -20px;
+    }
+    
+    .horizontal {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr); 
+        
+    }
+    
+    .vertical {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%; 
+    }
 }
 
 @media screen and (max-width: 780px) {
@@ -903,7 +933,7 @@ details > summary::after {
     padding: 20px;
     margin-left: 0;
     margin-bottom: 20px;
-    background-color: rgb(176, 118, 176);
+    background-color: rgb(193, 193, 93);
 }
 .enquiry{
     text-align: center;
@@ -936,33 +966,6 @@ details > summary::after {
 
 .form-online textarea{
     height: 150px;
-}
-
-.logos-div {
-    display: grid;
-    grid-template-columns: repeat(2,1fr); 
-    margin-top: -39px;
-}
-
-.horizontal {
-    display: grid;
-    grid-template-rows: repeat(5, 1fr); 
-    margin-top: 5px;
-    gap: 5px; /* Adding some space between the columns */
-}
-
-.vertical {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-}
-
-.horizontal-top, .horizontal-bottom {
-    margin-top: -1px;
-}
-.pacific-image{
-    margin-top:-10px;
 }
 
 .footer-div{
