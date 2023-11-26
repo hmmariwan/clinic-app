@@ -1,5 +1,7 @@
 {% extends 'web/index.html' %}
 {% load static %}
+{% load i18n %}
+
 
 {% block title %} 
 dental hygiene
@@ -11,9 +13,9 @@ dental hygiene
 
 
 {%block content%}
-<div class="hygiene-div">
+    {% blocktranslate %}
+        <div class="hygiene-div">
 
-</div>
-
-
+        </div>  
+    {% endblocktranslate %}
 {%endblock%}

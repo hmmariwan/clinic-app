@@ -1,5 +1,7 @@
 {% extends 'web/index.html' %}
 {% load static %}
+{% load i18n %}
+
 
 {% block title %} 
 NHS fees
@@ -10,9 +12,10 @@ NHS fees
 {% endblock %}
 
 {% block content %}
+    {% blocktranslate %}
+        <div class="nhs-div">
 
-
-<div class="nhs-div">
-
-</div>
+        </div>
+        
+    {% endblocktranslate %}
 {% endblock %}

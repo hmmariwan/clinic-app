@@ -1,4 +1,6 @@
 {% load static %}
+{% load i18n %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}  {% endblock %}</title>
     {% block css %}{% endblock %}
-    <link href="{% static 'CSS/index.css' %}" rel="stylesheet">
+    <link href="{% static 'CSS/inde.css' %}" rel="stylesheet">
 
     <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet"/>
 
@@ -15,6 +17,10 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body>
+
+    <style>
+        
+    </style>
 
     <div class="header-div">
         <header>
@@ -63,6 +69,20 @@
             <div class="header-appointment-div">
                 <a href="{% url 'new_patients' %}" class="header-appointment-button"><span>Book Appointment</span></a>
             </div>
+
+            <form action="{% url 'set_language' %}" method="post" class="header-language-div">
+                {% csrf_token %}
+                <input name="next" type="hidden" value="{{ request.path }}" />
+                <select name="language" onchange="this.form.submit()">
+                    {% get_current_language as CURRENT_LANGUAGE %}
+                    {% get_available_languages as LANGUAGES %}
+                    {% for lang in LANGUAGES %}
+                        <option value="{{ lang.0 }}" {% if lang.0 == CURRENT_LANGUAGE %}selected{% endif %}>
+                            {{ lang.1 }} <!-- Language name -->
+                        </option>
+                    {% endfor %}
+                </select>
+            </form>
             
             <div class="nav-div">
                 <nav>
@@ -108,108 +128,109 @@
         </header>
     </div>
 
+
     {% block content %}
     <!-- This is an empty block that child templates will override with their own content. -->
     {% endblock %}
 
     {% block common_block %}
-    <div class="quality-enquire-div">
-        <div class="quality-div">
-            <img src="{% static 'images/Dental logo.jpg' %}" alt="Logo" class="base-logo">
-            <p class="quality-div-title"><span>WHY CHOOSE</span> <br> CHEAPEST DENTAL CLINIC</p>
-            <ul>
-                <li>Proud to be the highest Google rated dentist in Neasden</li><br><div><i class="fa-solid fa-star"></i></div>
-                <li>Serving the local community for a century</li><br><div><i class="fa-solid fa-star"></i></div>
-                <li>Quality dental care at affordable prices</li><br><div><i class="fa-solid fa-star"></i></div>
-                <li>Excellent service and patient satisfaction</li><br><div><i class="fa-solid fa-star"></i></div>
-                <li>Modern technology in a relaxed environment</li><br><div><i class="fa-solid fa-star"></i></div>
-                <li>Highly qualified and patient-focused team</li>
-            </ul>
-            <i class="material-icons">event</i> 
-            <p class="base-appointment-text">Book an appointment</p>
-            <a href="{% url 'new_patients' %}" class="base-appointment-button">Book Now</a>
+        
+        <div class="quality-enquire-div">
+            <div class="quality-div">
+                <img src="{% static 'images/Dental logo.jpg' %}" alt="Logo" class="base-logo">
+                <p class="quality-div-title"><span>WHY CHOOSE</span> <br> CHEAPEST DENTAL CLINIC</p>
+                <ul>
+                    <li>Proud to be the highest Google rated dentist in Neasden</li><br><div><i class="fa-solid fa-star"></i></div>
+                    <li>Serving the local community for a century</li><br><div><i class="fa-solid fa-star"></i></div>
+                    <li>Quality dental care at affordable prices</li><br><div><i class="fa-solid fa-star"></i></div>
+                    <li>Excellent service and patient satisfaction</li><br><div><i class="fa-solid fa-star"></i></div>
+                    <li>Modern technology in a relaxed environment</li><br><div><i class="fa-solid fa-star"></i></div>
+                    <li>Highly qualified and patient-focused team</li>
+                </ul>
+                <i class="material-icons">event</i> 
+                <p class="base-appointment-text">Book an appointment</p>
+                <a href="{% url 'new_patients' %}" class="base-appointment-button">Book Now</a>
+            </div>
+            <div class="enquire-div" id="enquire">
+                <form method="post" action="{% url 'contact' %}">
+                    {% csrf_token %}
+                    <p class="enquiry">ENQUIRY FORM</p>
+                    <div class="form-online">
+                        <label>Name</label>
+                        <input type="text" name="name" id="name" placeholder="Enter your name" required>
+                    </div>
+                    <div class="form-online">
+                        <label>Mobile</label>
+                        <input type="text" name="mobile" id="mobile" placeholder="Enter your mobile" required>
+                    </div>
+                    <div class="form-online">
+                        <label>Email</label>
+                        <input type="email" name="email" id="email" placeholder="Enter your email">
+                    </div>
+                    <div class="form-online">
+                        <label>Subject</label>
+                        <input type="text" name="subject" id="subject" placeholder="Enter a subject">
+                    </div>
+                    <div class="form-online">
+                        <label>Message</label>
+                        <textarea type="text" name="message" id="message" placeholder="Enter your message" required></textarea>
+                    </div>
+                    
+                    <label>
+                        <input type="checkbox" required><p class="data-text1">I agree to Cheapest Dental Clinic using my personal data to provide me with information about dental treatment.</p>
+                    </label><br>
+                    
+                    <input type="checkbox" id="marketing" required>
+                    <label for="marketing">
+                        <p class="data-text2">I agree to Cheapest Dental Clinic using my personal data to keep me informed about marketing offers and initiatives that may be of interest.</p>
+                    </label>
+                    <div class="form-online">
+                        <input type="submit" class="form-online-button">
+                    </div>
+                </form>
+            </div>
         </div>
-        <div class="enquire-div" id="enquire">
-            <form method="post" action="{% url 'contact' %}">
-                {% csrf_token %}
-                <p class="enquiry">ENQUIRY FORM</p>
-                <div class="form-online">
-                    <label>Name</label>
-                    <input type="text" name="name" id="name" placeholder="Enter your name" required>
-                </div>
-                <div class="form-online">
-                    <label>Mobile</label>
-                    <input type="text" name="mobile" id="mobile" placeholder="Enter your mobile" required>
-                </div>
-                <div class="form-online">
-                    <label>Email</label>
-                    <input type="email" name="email" id="email" placeholder="Enter your email">
-                </div>
-                <div class="form-online">
-                    <label>Subject</label>
-                    <input type="text" name="subject" id="subject" placeholder="Enter a subject">
-                </div>
-                <div class="form-online">
-                    <label>Message</label>
-                    <textarea type="text" name="message" id="message" placeholder="Enter your message" required></textarea>
-                </div>
-                
-                <label>
-                    <input type="checkbox" required><p class="data-text1">I agree to Cheapest Dental Clinic using my personal data to provide me with information about dental treatment.</p>
-                </label><br>
-                
-                <input type="checkbox" id="marketing" required>
-                <label for="marketing">
-                    <p class="data-text2">I agree to Cheapest Dental Clinic using my personal data to keep me informed about marketing offers and initiatives that may be of interest.</p>
-                </label>
-                <div class="form-online">
-                    <input type="submit" class="form-online-button">
-                </div>
-            </form>
-        </div>
-    </div>
+        
     {% endblock %}
     <br>
     {% block optional_div %}
-    <div class="logos-div">
-        <div class="horizontal horizontal-top">
-            <div class="vertical">
-                <img src="{% static 'images/BDA.jpg' %}" alt="British Dental Assosiation">
+        <div class="logos-div">
+            <div class="horizontal horizontal-top">
+                <div class="vertical">
+                    <img src="{% static 'images/BDA.jpg' %}" alt="British Dental Assosiation">
+                </div>
+                <div class="vertical">
+                    <img src="{% static 'images/digital dentistry.jpg' %}" alt="digital dentistry image" >
             </div>
             <div class="vertical">
-                <img src="{% static 'images/digital dentistry.jpg' %}" alt="digital dentistry image" >
-           </div>
-           <div class="vertical">
-                <img src="{% static 'images/GDC.jpg' %}" alt="GDC image" >
-           </div>
-           <div class="vertical">
-                <img src="{% static 'images/invisalign.jpg' %}" alt="invisalign image" >
-           </div>
-           <div class="vertical">
-                <img src="{% static 'images/itero logo.jpg' %}" alt="itero logo image" >
-           </div>
+                    <img src="{% static 'images/GDC.jpg' %}" alt="GDC image" >
+            </div>
+            <div class="vertical">
+                    <img src="{% static 'images/invisalign.jpg' %}" alt="invisalign image" >
+            </div>
+            <div class="vertical">
+                    <img src="{% static 'images/itero logo.jpg' %}" alt="itero logo image" >
+            </div>
+            </div>
+            <div class="horizontal horizontal-bottom">
+                <div class="vertical">
+                    <img src="{% static 'images/boutique whitening.jpg' %}" alt="Boutique whitening" >
+                </div>
+                <div class="vertical">
+                    <img src="{% static 'images/care quality commision.jpg' %}" alt="care quality commision image" >
+                </div>
+                <div class="vertical">
+                    <img src="{% static 'images/enlighten.jpg' %}" alt="enlighten image" >
+                </div>
+                <div class="vertical">
+                    <img src="{% static 'images/swift dental group.jpg' %}" alt="nhs image" >
+                </div>
+                <div class="vertical">
+                    <img src="{% static 'images/pacific dental group.jpg' %}" alt="pacific dental group image" class="pacific-image">
+                </div>
+            </div>
         </div>
-        <div class="horizontal horizontal-bottom">
-            <div class="vertical">
-                <img src="{% static 'images/boutique whitening.jpg' %}" alt="Boutique whitening" >
-            </div>
-            <div class="vertical">
-                <img src="{% static 'images/care quality commision.jpg' %}" alt="care quality commision image" >
-            </div>
-            <div class="vertical">
-                <img src="{% static 'images/enlighten.jpg' %}" alt="enlighten image" >
-            </div>
-            <div class="vertical">
-                <img src="{% static 'images/swift dental group.jpg' %}" alt="nhs image" >
-            </div>
-            <div class="vertical">
-                <img src="{% static 'images/pacific dental group.jpg' %}" alt="pacific dental group image" class="pacific-image">
-            </div>
-        </div>
-    </div>
     {% endblock %}
-    
-
     
     <div class="footer-div">
 

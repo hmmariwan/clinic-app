@@ -1,5 +1,7 @@
 {% extends 'web/index.html' %}
 {% load static %}
+{% load i18n %}
+
 
 {% block title %} 
 NHS fees
@@ -10,22 +12,23 @@ NHS fees
 {% endblock %}
 
 {% block content %}
-<div class="about-div">
-    <div class="child-div1">YOU'RE IN SAFE</div>
-    <div class="child-div2">HANDS</div>
-</div>
-<i class="fa-solid fa-user"></i>
-<p class="team-name">DR DAVID TERRY <br>PRINCIPAL DENTIST</p> 
-
-<p class="bio">David Terry qualified with Phd from UCL London in 1990 and was awarded the University of London Gold Medal as the most distinguished student. 
-    He was also awarded the Certificate of Honour, the Ronald Gain Prosthetics Certificate of Merit, the Saunders Prize, and the S. J. Kaye Prize.
-
-    He became a member of the Royal College of Surgeons of England and followed this up with training in the provision of veneers and cosmetic crowns. 
-    He then completed postgraduate training in Restorative Dentistry and Implant Dentistry, 
-    both of which he passed with distinction from the Eastman Dental Institute, UCL.</p>
-
-
-
+    {% blocktranslate %}
+        <div class="about-div">
+            <div class="child-div1">YOU'RE IN SAFE</div>
+            <div class="child-div2">HANDS</div>
+        </div>
+        <i class="fa-solid fa-user"></i>
+        <p class="team-name">DR DAVID TERRY <br>PRINCIPAL DENTIST</p> 
+        
+        <p class="bio">David Terry qualified with Phd from UCL London in 1990 and was awarded the University of London Gold Medal as the most distinguished student. 
+            He was also awarded the Certificate of Honour, the Ronald Gain Prosthetics Certificate of Merit, the Saunders Prize, and the S. J. Kaye Prize.
+        
+            He became a member of the Royal College of Surgeons of England and followed this up with training in the provision of veneers and cosmetic crowns. 
+            He then completed postgraduate training in Restorative Dentistry and Implant Dentistry, 
+            both of which he passed with distinction from the Eastman Dental Institute, UCL.
+        </p>
+        
+    {% endblocktranslate %}
 {% endblock %}
 
 {% block common_block %}

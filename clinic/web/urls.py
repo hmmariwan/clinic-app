@@ -1,6 +1,14 @@
 from django.urls import path,include
 from . import views
+from django.conf.urls.i18n import i18n_patterns
+from django.contrib import admin
+
+from django.views.i18n import set_language
+
 urlpatterns = [
+    # ... your other url patterns ...
+    path('i18n/', include('django.conf.urls.i18n')),
+    path('set_language/', set_language, name='set_language'), 
     path('',views.home,name='home'),
     path('about/',views.about,name='about'),
     path('private_fees/',views.private_fees,name='private_fees'),
@@ -13,5 +21,7 @@ urlpatterns = [
     path('new_patients/',views.new_patients,name='new_patients'),
     path('team/david_terry/',views.david_terry,name='david_terry'),
     path('team/silvia_omer/',views.silvia_omer,name='silvia_omer'),
+
 ]
+
 

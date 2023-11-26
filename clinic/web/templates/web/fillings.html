@@ -1,5 +1,7 @@
 {% extends 'web/index.html' %}
 {% load static %}
+{% load i18n %}
+
 
 {% block title %} 
 general dentistry
@@ -11,9 +13,10 @@ general dentistry
 
 
 {%block content%}
-<div class="fillings-div">
+    {% blocktranslate %}
+        <div class="fillings-div">
 
-</div>
-
-
+        </div>
+        
+    {% endblocktranslate %}
 {%endblock%}

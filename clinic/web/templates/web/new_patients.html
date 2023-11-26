@@ -1,5 +1,7 @@
 {% extends 'web/index.html' %}
 {% load static %}
+{% load i18n %}
+
 
 {% block title %}
 new patients
@@ -9,62 +11,70 @@ new patients
 <link rel="stylesheet" href="{% static 'CSS/patients.css' %}">
 {%endblock%}
 
+
 {%block content%}
+    <br><br><br><br><br><br><br><br>
+    {% if messages %}
+        {% for message in messages %}
+            {% blocktranslate %}
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                    {{message}}
+                </div>
+            {% endblocktranslate %}   
+        {% endfor %}
+    {% endif %}
 
-<br><br><br><br><br><br><br><br>
-{% if messages %}
-    {% for message in messages %}
-        <div class="alert alert-success alert-dismissible fade show" role="alert">
-            {{message}}
-        </div>    
-    {% endfor %}
-{% endif %}
-
-<p class="appointment-page"><strong>Welcome to Cheapest <span class="den-clinic">Dental Clinic</span></strong> <br><br><span class="booking-fill">Please fill in the following form to book an appointment.</span></p>
-<div class="appointment-form-div" id="booking-form">
-    <form action="{%url 'new_patients' %}" method="post">
-        {% csrf_token %}
-        <label for="">Name</label>
-        <!--the id attribute gives a unique id to an element-->
-        <input type="text" id="name" name="name" placeholder="Enter your name" required>
-        <label for="">Mobile</label>
-        <!--the name attribute specifies the name of an element and is used for sending data from a form to a server-->
-        <input type="text" id="mobile" name="mobile" placeholder="Enter your mobile" required>
-        <label for="">Email</label>
-        <input type="email" id="email" name="email" placeholder="Enter your email" required>
-        <label for="">Patient Type</label>
-        <select name="patient-type" id="patient-type">
-            <option value="">Please choose</option>
-            <option value="nhs">NHS</option>
-            <option value="private">Private</option>
-        </select>
-        <label for="">Treatment</label>
-        <select name="treatment" id="treatment">
-            <option value="">Please choose</option>
-            <option value="check-up">Dental check-up</option>
-            <option value="hygiene">Hygiene services</option>
-            <option value="veneers">Veneers</option>
-        </select>
-        <label for="">Message</label>
-        <textarea name="message" id="message" cols="30" rows="10" placeholder="How can we help you?"></textarea>
-        <label for="">How did you find us?</label>
-        <select name="find-us" id="find-us">
-            <option value="">Please choose</option>
-            <option value="google">Google</option>
-            <option value="instagram">Instagram</option>
-            <option value="facebook">Facebook</option>
-            <option value="family">Family & Friend</option>
-        </select>
-        <input type="checkbox" id="data">
-        <label for="data" class="appointment-text">I agree to Cheapest Dental Clinic using my personal data to provide me with information about dental treatment.</label>
-        <input type="checkbox" id="marketing">
-        <label for="marketing" class="appointment-text">I agree to Cheapest Dental Clinic using my personal data to keep me informed about marketing offers and initiatives that may be of interest.</label>
+    
+        <p class="appointment-page"><strong>Welcome to Cheapest <span class="den-clinic">Dental Clinic</span></strong> <br><br><span class="booking-fill">Please fill in the following form to book an appointment.</span></p>
+        <div class="appointment-form-div" id="booking-form">
+            <form action="{% url 'new_patients' %}" method="post">
+    
+                {% csrf_token %}
+    {% blocktranslate %}
+                <label for="">Name</label>
+                <!--the id attribute gives a unique id to an element-->
+                <input type="text" id="name" name="name" placeholder="Enter your name" required>
+                <label for="">Mobile</label>
+                <!--the name attribute specifies the name of an element and is used for sending data from a form to a server-->
+                <input type="text" id="mobile" name="mobile" placeholder="Enter your mobile" required>
+                <label for="">Email</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                <label for="">Patient Type</label>
+                <select name="patient-type" id="patient-type">
+                    <option value="">Please choose</option>
+                    <option value="nhs">NHS</option>
+                    <option value="private">Private</option>
+                </select>
+                <label for="">Treatment</label>
+                <select name="treatment" id="treatment">
+                    <option value="">Please choose</option>
+                    <option value="check-up">Dental check-up</option>
+                    <option value="hygiene">Hygiene services</option>
+                    <option value="veneers">Veneers</option>
+                </select>
+                <label for="">Message</label>
+                <textarea name="message" id="message" cols="30" rows="10" placeholder="How can we help you?"></textarea>
+                <label for="">How did you find us?</label>
+                <select name="find-us" id="find-us">
+                    <option value="">Please choose</option>
+                    <option value="google">Google</option>
+                    <option value="instagram">Instagram</option>
+                    <option value="facebook">Facebook</option>
+                    <option value="family">Family & Friend</option>
+                </select>
+                <input type="checkbox" id="data">
+                <label for="data" class="appointment-text">I agree to Cheapest Dental Clinic using my personal data to provide me with information about dental treatment.</label>
+                <input type="checkbox" id="marketing">
+                <label for="marketing" class="appointment-text">I agree to Cheapest Dental Clinic using my personal data to keep me informed about marketing offers and initiatives that may be of interest.</label>
+                
+                <button type="submit">Send</button>
+            </form>
+        </div>
+        <br>
         
-        <button type="submit">Send</button>
-    </form>
-</div>
-<br>
+    {% endblocktranslate %}
 {%endblock%}
+
 
 
 {% block common_block %}

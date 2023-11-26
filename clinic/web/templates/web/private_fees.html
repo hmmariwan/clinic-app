@@ -1,5 +1,7 @@
 {% extends 'web/index.html' %}
 {% load static %}
+{% load i18n %}
+
 
 {% block title %} 
 Private fees
@@ -10,161 +12,165 @@ Private fees
 {% endblock %}
 
 {% block content %}
-
-<div class="private-fees-div">
-    <p class="finance-text"><strong>0% FINANCE AVAILABLE</strong></p>
-    <p class="paragraph">Spread the cost of your dental treatment with our finance plans.</p>
-    <a href="#private-fees" >TREATMENTS COSTS</a>
-</div>
-<br>
-<p><strong>PRIVATE TREATMENT COSTS AT CHEAPEST DENTAL CLINIC</strong><br><br>
-    A guide to our general costs for private dental treatment is listed below. 
-    We can also offer our patients interest free finance for certain treatments over 
-    24 months to help spread the cost of your treatment with our partners at Chrysalis Finance. 
-    Please call us on 025 6666 8888 today and speak to a member of our team for more information about our services.</p>
-
-<div class="table-div" id="private-fees">
-    <div class="table1-div">
-        <table class="table1">
-            <thead>
-                <tr >
-                    <th>General Dentistry</th>
-                    <th>Cost</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>New patient examination (including 2 radiographs)</td>
-                    <td class="cost">£50</td>
-                </tr>
-                <tr>
-                    <td>New patient private emergency (including radiographs)</td>
-                    <td class="cost">£75</td>
-                </tr>
-                <tr>
-                    <td>Routine private examination</td>
-                    <td class="cost">£45</td>
-                </tr>
-                <tr>
-                    <td>Hygienist 30 mins appointment</td>
-                    <td>£68</td>
-                </tr>
-                <tr>
-                    <td>Emergency appointment (existing patients)</td>
-                    <td class="cost">£45</td>
-                </tr>
-                <tr>
-                    <td>Mouthguards (for sport)</td>
-                    <td class="cost">from £175</td>
-                </tr>
-                <tr>
-                    <td>Nightguards (soft)</td>
-                    <td class="cost">from £175</td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-
-    <div class="table2-div">
-        <table class="table2">
-            <thead>
-                <tr >
-                    <th>Cosmetic treatments</th>
-                    <th>Cost</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Composite (white) fillings</td>
-                    <td class="cost">from £150</td>
-                </tr>
-                <tr>
-                    <td>Composite Bonding</td>
-                    <td class="cost">from 180</td>
-                </tr>
-                <tr>
-                    <td>Direct Veneer</td>
-                    <td class="cost">from £240</td>
-                </tr>
-                <tr>
-                    <td>Boutique Whitening</td>
-                    <td>£450</td>
-                </tr>
-                <tr>
-                    <td>Enlighten Whitening</td>
-                    <td class="cost">£695</td>
-                </tr>
-                <tr>
-                    <td>Invisalign/ Clear Aligners (per arch)</td>
-                    <td class="cost">from £2000</td>
-                </tr>
-                <tr>
-                    <td>Root canal treatment</td>
-                    <td class="cost">from £260</td>
-                </tr>
-                <tr>
-                    <td>Crowns</td>
-                    <td>from £750</td>
-                </tr>
-                <tr>
-                    <td>Bridges</td>
-                    <td>from £750</td>
-                </tr>
-                <tr>
-                    <td>Chrome (Metal) denture</td>
-                    <td>from £1000</td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-</div>
-
-<p class="finance-explained"><strong>FINANCE EXPLAINED</strong></p>
-<p class="arrow">How do I apply?</p>
-	<div class="content">
-		<p>
-            You will need to complete a simple, 
-            online credit application, which one of our team can help you with.
-        </p>
-	</div>
-
-	<p class="arrow">How much can I borrow?</p>
-	<div class="content">
-		<p>
-            You can borrow between £1000 and £25,000, subject to status. 
-            You must be over 18 to apply, and you must have lived in the UK for at least 3 years.
-        </p>
-	</div>
-
-    <p class="arrow">Do I have to pay a deposit?</p>
-	<div class="content">
-		<p>
-            We do usually ask for a minimum deposit of £250 
-            but this is dependent on your treatment plan. 
-            If you want to increase your deposit to reduce 
-            your repayments, then this is up to you.
-        </p>
-	</div>
-
-    <p class="arrow">How much are the repayments?</p>
-	<div class="content">
-		<p>
-            Depending on the amount you borrow and 
-            whether you pay a deposit. Our team can show you, 
-            completely without obligation, the monthly 
-            repayments for your particular treatment.
-        </p>
-	</div>
-
-    <p class="arrow">How do I make the repayments?</p>
-	<div class="content">
-		<p>
-            The monthly payments are collected by Direct Debit, 
-            starting one month after you sign the credit agreement, 
-            and are subject the usual guarantee from your bank.
-        </p>
-	</div>
-
-	<script src="{% static 'JS/private-fees.js' %}"></script>
-<br><br>
+    {% blocktranslate %}
+        <div class="private-fees-div">
+            <p class="finance-text"><strong>0% FINANCE AVAILABLE</strong></p>
+            <p class="paragraph">Spread the cost of your dental treatment with our finance plans.</p>
+            <a href="#private-fees" >TREATMENTS COSTS</a>
+        </div>
+        <br>
+        <p><strong>PRIVATE TREATMENT COSTS AT CHEAPEST DENTAL CLINIC</strong><br><br>
+            A guide to our general costs for private dental treatment is listed below. 
+            We can also offer our patients interest free finance for certain treatments over 
+            24 months to help spread the cost of your treatment with our partners at Chrysalis Finance. 
+            Please call us on 025 6666 8888 today and speak to a member of our team for more information about our services.</p>
+        
+        <div class="table-div" id="private-fees">
+            <div class="table1-div">
+                <table class="table1">
+                    <thead>
+                        <tr >
+                            <th>General Dentistry</th>
+                            <th>Cost</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>New patient examination (including 2 radiographs)</td>
+                            <td class="cost">£50</td>
+                        </tr>
+                        <tr>
+                            <td>New patient private emergency (including radiographs)</td>
+                            <td class="cost">£75</td>
+                        </tr>
+                        <tr>
+                            <td>Routine private examination</td>
+                            <td class="cost">£45</td>
+                        </tr>
+                        <tr>
+                            <td>Hygienist 30 mins appointment</td>
+                            <td>£68</td>
+                        </tr>
+                        <tr>
+                            <td>Emergency appointment (existing patients)</td>
+                            <td class="cost">£45</td>
+                        </tr>
+                        <tr>
+                            <td>Mouthguards (for sport)</td>
+                            <td class="cost">from £175</td>
+                        </tr>
+                        <tr>
+                            <td>Nightguards (soft)</td>
+                            <td class="cost">from £175</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        
+            <div class="table2-div">
+                <table class="table2">
+                    <thead>
+                        <tr >
+                            <th>Cosmetic treatments</th>
+                            <th>Cost</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Composite (white) fillings</td>
+                            <td class="cost">from £150</td>
+                        </tr>
+                        <tr>
+                            <td>Composite Bonding</td>
+                            <td class="cost">from 180</td>
+                        </tr>
+                        <tr>
+                            <td>Direct Veneer</td>
+                            <td class="cost">from £240</td>
+                        </tr>
+                        <tr>
+                            <td>Boutique Whitening</td>
+                            <td>£450</td>
+                        </tr>
+                        <tr>
+                            <td>Enlighten Whitening</td>
+                            <td class="cost">£695</td>
+                        </tr>
+                        <tr>
+                            <td>Invisalign/ Clear Aligners (per arch)</td>
+                            <td class="cost">from £2000</td>
+                        </tr>
+                        <tr>
+                            <td>Root canal treatment</td>
+                            <td class="cost">from £260</td>
+                        </tr>
+                        <tr>
+                            <td>Crowns</td>
+                            <td>from £750</td>
+                        </tr>
+                        <tr>
+                            <td>Bridges</td>
+                            <td>from £750</td>
+                        </tr>
+                        <tr>
+                            <td>Chrome (Metal) denture</td>
+                            <td>from £1000</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        
+        <p class="finance-explained"><strong>FINANCE EXPLAINED</strong></p>
+        <p class="arrow">How do I apply?</p>
+            <div class="content">
+                <p>
+                    You will need to complete a simple, 
+                    online credit application, which one of our team can help you with.
+                </p>
+            </div>
+        
+            <p class="arrow">How much can I borrow?</p>
+            <div class="content">
+                <p>
+                    You can borrow between £1000 and £25,000, subject to status. 
+                    You must be over 18 to apply, and you must have lived in the UK for at least 3 years.
+                </p>
+            </div>
+        
+            <p class="arrow">Do I have to pay a deposit?</p>
+            <div class="content">
+                <p>
+                    We do usually ask for a minimum deposit of £250 
+                    but this is dependent on your treatment plan. 
+                    If you want to increase your deposit to reduce 
+                    your repayments, then this is up to you.
+                </p>
+            </div>
+        
+            <p class="arrow">How much are the repayments?</p>
+            <div class="content">
+                <p>
+                    Depending on the amount you borrow and 
+                    whether you pay a deposit. Our team can show you, 
+                    completely without obligation, the monthly 
+                    repayments for your particular treatment.
+                </p>
+            </div>
+        
+            <p class="arrow">How do I make the repayments?</p>
+            <div class="content">
+                <p>
+                    The monthly payments are collected by Direct Debit, 
+                    starting one month after you sign the credit agreement, 
+                    and are subject the usual guarantee from your bank.
+                </p>
+            </div>
+    {% endblocktranslate %}
+        
+            <script src="{% static 'JS/private-fees.js' %}"></script>
+        <br><br>
+            
+    
 {% endblock %}
+

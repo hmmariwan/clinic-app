@@ -1,5 +1,7 @@
 {% extends 'web/index.html' %}
 {% load static %}
+{% load i18n %}
+
 
 {% block title %} 
 NHS fees
@@ -10,23 +12,23 @@ NHS fees
 {% endblock %}
 
 {% block content %}
-
-<div class="about-div">
-    <div class="child-div1">YOU'RE IN SAFE</div>
-    <div class="child-div2">HANDS</div>
-</div>
-<i class="fa-solid fa-user"></i>
-<p class="team-name">DR SILVIA OMER <br>COSMETIC & GENERAL DENTITRY</p> 
-
-<p>Dr Silvia Omer qualified from Kings College London and completed her foundation year with Thames Valley. 
-    Here she progressed her dental skills in cosmetic restorations, root canal treatment, extractions, veneers, crowns and dentures. 
-    She has been fortunate enough to have gained experience shadowing highly esteemed dentists over the past few 
-    years while carrying out further post graduate training. 
-    This has allowed her to further develop her skills and appreciate an interest in restorative and cosmetic dentistry.
-    Silvia prides herself in providing a high - quality service with a strong focus on transparency and a warm and honest approach. 
-    She enjoys taking the time to understand her patients and help ease their anxieties with her calming and friendly nature.</p>
-
-
+    {% blocktranslate %}
+        <div class="about-div">
+            <div class="child-div1">YOU'RE IN SAFE</div>
+            <div class="child-div2">HANDS</div>
+        </div>
+        <i class="fa-solid fa-user"></i>
+        <p class="team-name">DR SILVIA OMER <br>COSMETIC & GENERAL DENTITRY</p> 
+        
+        <p>Dr Silvia Omer qualified from Kings College London and completed her foundation year with Thames Valley. 
+            Here she progressed her dental skills in cosmetic restorations, root canal treatment, extractions, veneers, crowns and dentures. 
+            She has been fortunate enough to have gained experience shadowing highly esteemed dentists over the past few 
+            years while carrying out further post graduate training. 
+            This has allowed her to further develop her skills and appreciate an interest in restorative and cosmetic dentistry.
+            Silvia prides herself in providing a high - quality service with a strong focus on transparency and a warm and honest approach. 
+            She enjoys taking the time to understand her patients and help ease their anxieties with her calming and friendly nature.
+        </p>
+    {% endblocktranslate %}
 {% endblock %}
 
 {% block common_block %}

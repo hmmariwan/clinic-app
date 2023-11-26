@@ -1,5 +1,7 @@
 {% extends 'web/index.html' %}
 {% load static %}
+{% load i18n %}
+
 
 {% block title %} 
 Specialist dentistry
@@ -10,9 +12,10 @@ Specialist dentistry
 {% endblock %}
 
 {% block content %}
+    {% blocktranslate %}
+        <div class="specialist-div">
 
-<div class="specialist-div">
-
-</div>
-
+        </div>
+        
+    {% endblocktranslate %}
 {% endblock %}

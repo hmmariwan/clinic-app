@@ -2,6 +2,8 @@ from django.shortcuts import render,redirect
 from django.contrib import messages
 from django.core.mail import send_mail,EmailMessage
 
+from django.utils.translation import gettext_lazy as _
+
 def home(request):
     return render(request,'web/home.html')
 
@@ -22,7 +24,8 @@ def contact(request):
         subject=request.POST['subject']
         message=request.POST['message']
         
-        messages.success(request,f'Thank you {name} for submitting your form.We will get back to you very soon.')
+        message = _("Thank you %(name)s for submitting your form. We will get back to you very soon.")
+        messages.success(request, message)
 
         email_to_owner = EmailMessage(
             subject=f'Subject: {subject} from {name}',
