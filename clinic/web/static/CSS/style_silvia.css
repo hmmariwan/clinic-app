@@ -1,0 +1,78 @@
+.about-div{
+    background-color: rgb(175, 175, 166);
+    height: 350px;
+    width: 100%;
+    top: 0;
+    left: 0;
+    position:relative;
+}
+.fa-user{
+    padding-top: 20px;
+    padding-left: 540px;
+    color:black;
+    font-size: 120px;
+}
+.team-name{
+    text-align: center;
+}
+.bio{
+    padding: 0 30px;
+}
+.child-div1{
+    position: absolute;
+    margin-left: 293px;
+    margin-top: 150px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 50px;
+    color:black;
+
+}
+.child-div2{
+    position: absolute;
+    margin-left: 410px;
+    margin-top: 195px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 50px;
+    color: black;
+}
+
+@media (max-width:780px){
+    .about-div{
+        background-color:rgb(175, 175, 166);
+        height: 350px;
+        width: 100%;
+        top: 0;
+        left: 0;
+        position:relative;
+    }
+    .fa-user{
+        padding-top: 30px;
+        padding-bottom: 30px;
+        padding-left: 150px;
+        color: black;
+        font-size: 120px;
+    }
+    .team-name{
+        text-align: center;
+    }
+    .bio{
+        padding: 20px 20px;
+    }
+    .child-div1{
+        position: absolute;
+        margin-left: 40px;
+        margin-top: 100px;
+        font-family: var(--font-family);
+        font-size: 40px;
+        color:var(--font-color);
+    
+    }
+    .child-div2{
+        position: absolute;
+        margin-left: 130px;
+        margin-top: 150px;
+        font-family: var(--font-family);
+        font-size: 40px;
+        color: var(--font-color);
+    }
+}

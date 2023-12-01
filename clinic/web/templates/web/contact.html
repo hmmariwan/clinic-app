@@ -8,12 +8,15 @@ Contact
 {% endblock %}
 
 {% block css %}
-<link href="{% static 'CSS/contact.css' %}" rel="stylesheet">
+<link href="{% static 'CSS/style_contact.css' %}" rel="stylesheet">
 {% endblock %}
 
 {% block content %}
+    <!--using a Django template tag to check if there are any messages to be displayed-->
     {% if messages %}
+        <!--using a Django for loop template tag to iterate each message in messages-->
         {% for message in messages %}
+            <!--using another Django template tag to translate te message-->
             {% blocktranslate %}
                 <div class="alert alert-warning alert-dismissible fade show" role="alert">
                     {{message}}
@@ -89,7 +92,7 @@ Contact
 
 
 {% block common_block %}
-<!-- to exclude a div tag on base.html which contain a contact form -->
+<!-- to exclude all contents in this block which is on base.html template-->
 {% endblock %}
 
 

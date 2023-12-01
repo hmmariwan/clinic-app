@@ -8,12 +8,12 @@ new patients
 {% endblock %}
 
 {%block css%}
-<link rel="stylesheet" href="{% static 'CSS/patients.css' %}">
+<link rel="stylesheet" href="{% static 'CSS/style_patients.css' %}">
 {%endblock%}
 
 
 {%block content%}
-    <br><br><br><br><br><br><br><br>
+   
     {% if messages %}
         {% for message in messages %}
             {% blocktranslate %}
@@ -24,13 +24,18 @@ new patients
         {% endfor %}
     {% endif %}
 
-    
-        <p class="appointment-page"><strong>Welcome to Cheapest <span class="den-clinic">Dental Clinic</span></strong> <br><br><span class="booking-fill">Please fill in the following form to book an appointment.</span></p>
+    {% blocktranslate %}
+        <div class="patient-div">
+            <p>We take new patients</p>
+        </div>
+        <p class="appointment-page"><strong>Welcome to Cheapest <span class="den-clinic">Dental Clinic</span></strong></p>
+        <p class="booking-fill">Please fill in the following form to book an appointment.</p>
+    {% endblocktranslate %} 
         <div class="appointment-form-div" id="booking-form">
             <form action="{% url 'new_patients' %}" method="post">
-    
+
                 {% csrf_token %}
-    {% blocktranslate %}
+        {% blocktranslate %}
                 <label for="">Name</label>
                 <!--the id attribute gives a unique id to an element-->
                 <input type="text" id="name" name="name" placeholder="Enter your name" required>
@@ -71,8 +76,8 @@ new patients
             </form>
         </div>
         <br>
-        
-    {% endblocktranslate %}
+
+        {% endblocktranslate %}
 {%endblock%}
 
 

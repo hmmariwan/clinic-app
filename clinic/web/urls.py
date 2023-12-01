@@ -5,8 +5,7 @@ from django.contrib import admin
 
 from django.views.i18n import set_language
 
-urlpatterns = [
-    # ... your other url patterns ...
+urlpatterns =[
     path('i18n/', include('django.conf.urls.i18n')),
     path('set_language/', set_language, name='set_language'), 
     path('',views.home,name='home'),

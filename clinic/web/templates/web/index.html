@@ -1,14 +1,23 @@
-{% load static %}
-{% load i18n %}
+{% load static %} <!--Using the load tag to make static tag available in the template which allows me to embed links for static files-->
+{% load i18n %} <!--Loading the internationalization (i18n) tags.It is a template tag in Django which is used to translate text into different language-->
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}  {% endblock %}</title>
-    {% block css %}{% endblock %}
-    <link href="{% static 'CSS/inde.css' %}" rel="stylesheet">
+<!DOCTYPE html> <!--This declaration is an instruction to the web browser about what version of HTML the page is written in-->
+<html lang="en"><!--In HTML document, this tag is on the top-level.It is used to define the structure of a web page. 
+                The lang attribute is used to specify the default language of the text in the page-->
+<head> <!--this is an HTML tag that provides information about the HTML document and it is used to hold various types of metadata.anything inside this tag will not be displayed on the web page-->
+    <meta charset="UTF-8"> <!--the HTML meta tag is used to provide metadata about the HTML document.
+                            The charset attributes specifies the character encoding for the document-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><!--this HTML meta tag is used for responsive web design. 
+                                                                            the name atribute is providing information about the viewport settings.
+                                                                            the content attribute specifies the content related to the viewport settings-->
+    <title>{% block title %}  {% endblock %}</title><!--title is an HTML tag used to define the title of an HTML document.
+                                                    block title and endblock are template tags which are used to create a 
+                                                    placeholder that can be overridden by child templates-->
+    {% block css %}{% endblock %} <!--This is a Django template tag. When the 'extends' template tag is used to extend the parent template into the child template,
+                                    this block can be used to override a CSS code-->
+    <link href="{% static 'CSS/style_index.css' %}" rel="stylesheet"><!--This is an HTML tag and it is used to establish a relationship between the current document and an external source.
+                                                            The rel attribute specifies the relatioship between the current document and the linked document
+                                                            while the href attribute specifies the location of the linked document. -->
 
     <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet"/>
 
@@ -18,34 +27,30 @@
 </head>
 <body>
 
-    <style>
-        
-    </style>
-
-    <div class="header-div">
+    <div class="header-div"><!--Using a div tag to create a section on the top of the page that contains logo, navigation bar, some icons and a button-->
         <header>
             <div class="header-div-logo">
-                <img src="{% static 'images/Dental logo.jpg' %}" alt="Logo" class="header-logo">
+                <img src="{% static 'images/Dental logo.jpg' %}" alt="Logo" class="header-logo"><!--Using the img tag to load the logo. Inside the src attribute, the static tag is used to embed the image-->
                 <div class="header-name"><strong>CHEAPEST</strong></div>
                 <div class="header-clinic"><strong>DENTAL CLINIC</strong></div>
             </div>
-            <div class="header-div-email">
+            <div class="header-div-email"><!--This div tag creates an email address and its icon which will be clickable-->
                 <a href="mailto:hmareiwan@outlook.com" class="email-icon">
-                    <i class="fa-solid fa-envelope"></i><span class="email-address">Email us</span>
+                    <i class="fa-solid fa-envelope"></i><span class="email-address">Email us</span><!--the i tag is used to represent an icon-->
                 </a>
             </div>
-            <div class="header-div-tel">
+            <div class="header-div-tel"><!--This div tag creates a telephone number and its icon which will also be clickable-->
                 <a href="tel:+447965928303" class="tel-icon">
                     <i class="fa-solid fa-phone"></i><span class="tel-number">Call us</span>
                 </a>
             </div>
-            <div class="header-like-div"> 
-                <details>
-                    <summary>I am interested in ... </summary>
+            <div class="header-like-div"> <!--This div tag contains a box that will allow the user to select a hidden link.-->
+                <details><!--using a details tag to create a disclosure widget containing some links, the user will be able to open and close whenever they want it-->
+                    <summary>I am interested in ... </summary><!--the text within the summary tag is used as a label for the disclosure widget -->
                     <ul>
                         <div class="header-like-div2">
                             <div class="like-child-div">
-                                <li><a href="{% url 'fillings' %}">FILLINGS</a></li>
+                                <li><a href="{% url 'fillings' %}">FILLINGS</a></li><!--the a tag is used to create a link inside the disclosure widget-->
                             </div>
                             <div class="like-child-div">
                                 <li><a href="{% url 'dental_hygiene' %}">DENTAL HYGIENE</a></li>
@@ -67,40 +72,55 @@
                 </details>
             </div>
             <div class="header-appointment-div">
-                <a href="{% url 'new_patients' %}" class="header-appointment-button"><span>Book Appointment</span></a>
+                <a href="{% url 'new_patients' %}" class="header-appointment-button"><span>Book Appointment</span></a><!--creating a link then in CSS convert it to a button-->
             </div>
 
-            <form action="{% url 'set_language' %}" method="post" class="header-language-div">
+            <form action="{% url 'set_language' %}" method="post"><!--the form tag is used to create a form on a web page.
+                                                                If the form is submitted, the value of action attribute will be occurred.
+                                                                url 'set_language' is a Django template tag and it is used to generate 
+                                                                the URL associated with the named URL pattern 'set_language'.
+                                                                The method attribute is used to specify the HTTP method when the form is submitted - the
+                                                                'post' method is used for submitting the form when data needs to be sent to the server 
+                                                                in the body of the HTTP request.-->
                 {% csrf_token %}
-                <input name="next" type="hidden" value="{{ request.path }}" />
-                <select name="language" onchange="this.form.submit()">
-                    {% get_current_language as CURRENT_LANGUAGE %}
-                    {% get_available_languages as LANGUAGES %}
-                    {% for lang in LANGUAGES %}
-                        <option value="{{ lang.0 }}" {% if lang.0 == CURRENT_LANGUAGE %}selected{% endif %}>
-                            {{ lang.1 }} <!-- Language name -->
+                <input name="next" type="hidden" value="{{ request.path }}" /><!-- the input field creates a hidden field named "next" within a form. 
+                                                                                It stores the current URL path (request.path) as its value-->
+                <select name="language" class="user-language" onchange="this.form.submit()"><!--the select tag is used to create a dropdown list in the form.
+                                                                                            The inline event handler (onchange) is a native attribute in HTML that 
+                                                                                            triggers an action when the value in the <select> dropdown is changed-->
+                    {% get_current_language as current_language %}<!--Using a Django template tag to retrieve the currently selected 
+                                                                    language and store it in the variable current_languaage.-->
+                    {% get_available_languages as language_list %} <!--Using another Django template tag to retrieve a list of available 
+                                                                    languages and store them in the variable language_list.-->
+                    {% for lang in language_list %}<!--Using a for loop that iterates through each language in the  language_list.-->
+                        <option class="chosen-language" value="{{ lang.0 }}" {% if lang.0 == current_language %}selected{% endif %}><!--Option tag is used to ctrate an option in a dropdown list.
+                                                                                                                                            language.0 represents the language code.a Django template logic 
+                                                                                                                                            is used to check if the current language matches the language 
+                                                                                                                                            being iterated over in the loop. If it matches, the selected 
+                                                                                                                                            attribute is added to the option, making it the default selected option in the dropdown.-->
+                            {{ lang.1 }} <!--This is representing the language name.-->
                         </option>
-                    {% endfor %}
+                    {% endfor %}<!--closing the for loop tag-->
                 </select>
             </form>
             
-            <div class="nav-div">
+            <div class="nav-div"><!--this div contains the navigation bar-->
                 <nav>
                     <div class="navigation">
-                        <input type="checkbox" class="toggle-menu">
+                        <input type="checkbox" class="toggle-menu"><!--using an input tag to create a checkbox-->
                         <div class="hamburger"></div>
-                        <ul class="menu">
-                            <li><a href="{%  url 'home' %}" class="base-nav border" >HOME</a></li>
+                        <ul class="menu"><!--using an ul tag to create unordered lists-->
+                            <li><a href="{%  url 'home' %}" class="base-nav border" >HOME</a></li><!--within a li tag, a tas is used to create a menu-->
                             <li><a href="{%  url 'about' %}" class="base-nav" >ABOUT</a></li>
                             <li class="dropdown"> 
                                 <a href="#" class="base-nav iarrow">TREATMENT<i class="fa-solid fa-square-caret-down"></i> </a>
                                 <ul class="dropdown-content">
-                                    <div class="dropdown-container">
+                                    <div class="dropdown-container"><!--this div contains the dropdown menu-->
 
                                         <li class="dropdown2"> 
                                             <a href="#" class="base-nav iarrow">GENERAL DENTISTRY<i class="fa-solid fa-square-caret-down"></i> </a>
                                             <ul class="dropdown-content2">
-                                                <div class="dropdown-container2"> 
+                                                <div class="dropdown-container2"><!--this div contains the nested dropdown menu-->
                                                     <li><a href="{% url 'fillings' %}" class="base-nav">FILLINGS</a></li>
                                                     <li><a href="{% url 'dental_hygiene' %}" class="base-nav">DENTAL HYGIENE</a></li>
                                                 </div>
@@ -133,9 +153,9 @@
     <!-- This is an empty block that child templates will override with their own content. -->
     {% endblock %}
 
-    {% block common_block %}
+    {% block common_block %}<!--creating a block -->
         
-        <div class="quality-enquire-div">
+        <div class="quality-enquire-div"><!--creating a div that contains logo, paragraphs and form-->
             <div class="quality-div">
                 <img src="{% static 'images/Dental logo.jpg' %}" alt="Logo" class="base-logo">
                 <p class="quality-div-title"><span>WHY CHOOSE</span> <br> CHEAPEST DENTAL CLINIC</p>
@@ -151,7 +171,7 @@
                 <p class="base-appointment-text">Book an appointment</p>
                 <a href="{% url 'new_patients' %}" class="base-appointment-button">Book Now</a>
             </div>
-            <div class="enquire-div" id="enquire">
+            <div class="enquire-div" id="enquire"><!--this div contains a form.the id attribute is used to link the form with an a tag in child template-->
                 <form method="post" action="{% url 'contact' %}">
                     {% csrf_token %}
                     <p class="enquiry">ENQUIRY FORM</p>
@@ -191,28 +211,28 @@
             </div>
         </div>
         
-    {% endblock %}
+    {% endblock %} <!--closing the block-->
     <br>
-    {% block optional_div %}
-        <div class="logos-div">
-            <div class="horizontal horizontal-top">
+    {% block optional_div %}<!--creating another block for differnt logos-->
+        <div class="logos-div"><!--creating a div that contains two equal horizontal sections-->
+            <div class="horizontal horizontal-top"><!--creating the horizontal top-->
                 <div class="vertical">
                     <img src="{% static 'images/BDA.jpg' %}" alt="British Dental Assosiation">
                 </div>
+                <div class="vertical"><!--equally dividing the horizontal top to vertical section-->
+                    <img src="{% static 'images/digital dentistry.jpg' %}" alt="digital dentistry image" ><!--placing an image to the vertical section-->
+                </div>
                 <div class="vertical">
-                    <img src="{% static 'images/digital dentistry.jpg' %}" alt="digital dentistry image" >
-            </div>
-            <div class="vertical">
                     <img src="{% static 'images/GDC.jpg' %}" alt="GDC image" >
-            </div>
-            <div class="vertical">
+                </div>
+                <div class="vertical">
                     <img src="{% static 'images/invisalign.jpg' %}" alt="invisalign image" >
-            </div>
-            <div class="vertical">
+                </div>
+                <div class="vertical">
                     <img src="{% static 'images/itero logo.jpg' %}" alt="itero logo image" >
+                </div>
             </div>
-            </div>
-            <div class="horizontal horizontal-bottom">
+            <div class="horizontal horizontal-bottom"><!--creating the horizontal bottom-->
                 <div class="vertical">
                     <img src="{% static 'images/boutique whitening.jpg' %}" alt="Boutique whitening" >
                 </div>
@@ -232,14 +252,14 @@
         </div>
     {% endblock %}
     
-    <div class="footer-div">
+    <div class="footer-div"><!--creating another div that contains some links, map and contact details-->
 
         <div class="footer-div-quicklink">
             <h3 class="footer-heading">Quick Links</h3>
             
             <li>
                 <div class="hover">
-                    <i class="bx bx-chevron-down" aria-hidden="true"></i>
+                    <i class="bx bx-chevron-down" aria-hidden="true"></i><!--the aria-hidden="true" attribute is used to indicate that the icon is purely decorative.-->
                     <a href="{% url 'about' %}">About</a>
                 </div>
             </li>
@@ -259,15 +279,15 @@
             <li>
                 <div class="hover">
                     <i class="bx bx-chevron-down" aria-hidden="true"></i>
-                    <!--the target attribute opens the external site in a new tab. the rel attribute improves the security of my site-->
-                    <a href="https://www.gdc-uk.org/" target="_blank" rel="noopener noreferrer">GDC Website</a>
+                    <a href="https://www.gdc-uk.org/" target="_blank" rel="noopener noreferrer">GDC Website</a><!--the target attribute opens the external site in a new tab. 
+                                                                                                                the rel attribute improves the security of my site-->
                 </div>
             </li>
         </div>
           
         <div class="footer-div-contact">
             <h3 class="footer-heading">Contact Details</h3>
-            <address class="footer-address">
+            <address class="footer-address"><!--the address tag is used to define the physical address of the clinic-->
                 <a href="https://maps.app.goo.gl/oQx8pQ3UFV7x1QPZ6" >
                     <i class="fa-sharp fa-solid fa-location-dot"></i> 240 High Street <br>London <br> NW5 6TY
                 </a>
@@ -282,18 +302,19 @@
                     <i class="fa-solid fa-phone"></i><span class="footer-tel-number">0203 6666 666</span>
                 </a>
             </div>
+            <!--the iframe tag is used to embed a map-->
             <iframe class="footer-map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2480.3662103968645!2d-0.2480324242063424!3d51.561519771825715!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4876110671906a97%3A0x85ae46e226fc601e!2s96%20Tanfield%20Ave%2C%20Neasden%2C%20London%20NW2%207RT!5e0!3m2!1sen!2suk!4v1698852151336!5m2!1sen!2suk"></iframe>
         </div>
         <div class="footer-div-opening">
             <h3 class="footer-opening">Opening Times</h3>
-            <table class="practice-opening">
-              <tr>
+            <table class="practice-opening"><!--using a table tag to create a table that contains informations about the opening hours of the clinic-->
+              <tr><!--using a tr tag to create a row in the table-->
                 <th></th>
-                <th>Open</th>
+                <th>Open</th><!--using a th tag to name a column in the table-->
                 <th>Close</th>	
               </tr>
               <tr>
-                <td>Mon - Fri</td>
+                <td>Mon - Fri</td><!--using a td tag to enter data into the table-->
                 <td>09:00</td>
                 <td>18:00</td>
               </tr>
@@ -305,9 +326,9 @@
             </table>
         </div>
     </div>
-    <div class="footer">
+    <div class="footer"><!--this div contains a footer-->
         <footer>
-           
+            <!--creating some links for social media-->
             <span>Find us on:</span>
             <a href="https://www.facebook.com" target="_blank" rel="noopener" aria-label="Find us on Facebook (link opens in a new tab)">Facebook</a>
             <a href="https://www.instagram.com" target="_blank" rel="noopener" aria-label="Find us on Instagram (link opens in a new tab)">Instagram</a>

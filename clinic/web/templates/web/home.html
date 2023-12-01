@@ -9,22 +9,26 @@ Home
 {% endblock %}
 
 {% block css %}
-<link href="{% static 'CSS/home.css' %}" rel="stylesheet">
+<link href="{% static 'CSS/style_home.css' %}" rel="stylesheet">
 {% endblock %}
 
 {% block content %}
-    {% blocktranslate %}
+    
 
 
 
         <div class="home-div">
             <iframe class="home-video" src="https://www.youtube.com/embed/mXqlpP0gnaY?si=VWrALqz3TxpanDua" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        {% blocktranslate %}
             <div class="heading-text"><strong>Trust in Calm</strong></div>
             <div class="ht1">Dental</div><div class="ht2">Cosmetic</div><div class="ht3">Wellness</div>
+        {% endblocktranslate %}
             <div class="home-vl1"></div><div class="home-vl2"></div>
         </div>
-        
+        {% blocktranslate %}
         <p class="home-title"><strong>WELCOME TO CHEAPEST <br> DENTAL CLINIC</strong></p>
+        {% endblocktranslate %}
+        {% blocktranslate %}
         <p class="home-text">Located in the heart of Neasden, we have been helping the local 
             community with high-quality dental care for over a decade. 
             We take great pride in the excellent NHS and private treatments we offer and warmly 
@@ -32,6 +36,7 @@ Home
             With patients from all parts of north London our passion is to deliver exceptional service 
             to all of our patients and help provide them with beautiful, bright, healthy smiles.
         </p>
+        {% endblocktranslate %}
         <div class="tel-email-div">
             <div class="hover-tel">
                 <a href="tel:+447965928303" >
@@ -51,7 +56,7 @@ Home
                 </a> 
             </div>
         </div>
-    {% endblocktranslate %}
+        
         <div class="images-div">
             <div class="grid-image odd" style="background-image: url('{% static 'images/dental bridges.jpg' %}');"></div>
             <div class="grid-image"></div>

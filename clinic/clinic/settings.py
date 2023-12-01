@@ -41,8 +41,6 @@ INSTALLED_APPS = [
 
     'web',
 
-    
-
 ]
 
 MIDDLEWARE = [
@@ -119,7 +117,8 @@ USE_I18N = True
 USE_TZ = True
 
 USE_L10N=True
-LANGUAGES=[('en', 'English'), ('es', 'Spanish'), ('ko', 'Korean'),]
+LANGUAGES=[('en', 'English'), ('es', 'Spanish'), ('ko', 'Korean'),('ar','Arabic'),('fa','Persian'),
+        ('fr','French'),('zh','Chinese'),('fil','Filipino'),('ur','Urdu'),('uz','Uzbek'),('hi','Hindi')]
 
 
 # Static files (CSS, JavaScript, Images)
@@ -139,7 +138,7 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'in-v3.mailjet.com'  # Mailjet's SMTP server
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
-EMAIL_HOST_USER = '6a1a7ec448058eaaa0a294a52e9f5e7e'  # Replace with your API Key from Mailjet
-EMAIL_HOST_PASSWORD = 'd279c6dc9920efe12637fe528852d7d9'  # Replace with your Secret Key from Mailjet
+EMAIL_HOST_USER = '6a1a7ec448058eaaa0a294a52e9f5e7e' 
+EMAIL_HOST_PASSWORD = 'd279c6dc9920efe12637fe528852d7d9'  
 
 

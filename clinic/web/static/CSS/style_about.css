@@ -1,15 +1,15 @@
-@media (min-width:781px){
-    .about-div{
+@media (min-width:781px){/*creating a CSS media query that targets devices with a minimum screen width of 781 pixels*/
+    .about-div{  /*styling the about-div which is on the top of the page*/
         background-color: rgb(175, 175, 166);
         height: 350px;
         width: 100%;
         top: 0;
         left: 0;
-        position:relative;
+        position:relative;/*about-div has 4 child divs so the value of the position is relative*/
     }
     
     .child-div1{
-        position: absolute;
+        position: absolute;/*I used the value absolute for the position because child-div is inside about-div*/
         margin-left: 293px;
         margin-top: 120px;
         font-family: var(--font-family);
@@ -17,6 +17,7 @@
         color:var(--font-color);
 
     }
+    /* I applied margins, font family and color to the contents of the div*/
     .child-div2{
         position: absolute;
         margin-left: 300px;
@@ -44,7 +45,7 @@
         font-family: var(--font-family);
         font-size: 30px;
     }
-    .child-div3 a:hover{
+    .child-div3 a:hover{ /*the :hover selector is used to select the a tag when the user mouses over it*/
         color:blue;
     }
     .about-title{
@@ -61,8 +62,9 @@
         color:var(--font-color);
     }
     .team-div{
-        display: grid;
-        grid-template-rows: 1fr 1fr;
+        display: grid; /*the Grid layout is efficient to create layouts that adapt well to different screen sizes*/
+        grid-template-rows: 1fr 1fr;/*the grid-template-rows property is used to specify the size and distributions of rows in a grid container.
+                                    The 1fr unit distributes all available space equally among the rows so the grid will be divided to two rows of equal height*/
         height: 400px;
         margin-top:30px;
         margin-bottom: -30px;
@@ -71,18 +73,18 @@
     }
     .horizontal-div{
         display:grid;
-        grid-template-columns: repeat(4,1fr);
+        grid-template-columns: repeat(4,1fr); /*creating four columns which have same height and width*/
         
     }
     .vertical-div{
-        display: flex;
-        justify-content: center;
+        display: flex; /*creating a flex container for a tag*/
+        justify-content: center;  /*horizontally centers the flex items within the flex container*/
     }
     a.doctor{
-       display: block;
+       display: block; /*creating a block-level box in the layout*/
        height: 100%;
        width: 100%;
-       text-decoration: none;
+       text-decoration: none; /*removing the underline styling from a link*/
        padding-left: 90px;  
     }
     .vertical-div:hover,.vertical-div:hover .fa-user, .vertical-div:hover .team-name{
@@ -103,9 +105,9 @@
         font-size: 120px;
     }
     }
-
+    /*creating a CSS media query that targets devices with a maximum screen width of 780 pixels*/
     @media (max-width: 780px){
-    .about-div{
+    .about-div{/*styling the about-div which is on the top of the page*/
         background-color: rgb(175, 175, 166);
         height: 350px;
         width: 100%;
@@ -134,6 +136,7 @@
     .child-div4{
         position: absolute;
         margin-left: 20px;
+        margin-right: 20px;
         margin-top: 180px;
         font-family: var(--font-family);
         font-size: 20px;
@@ -156,15 +159,16 @@
     
     .about-title {
         font-family: var(--font-family);
-        font-size: 20px;
+        font-size: 25px;
         color:var(--font-color);
-        padding-left: 30px;
+        padding-top: 30px;
+        padding-left: 40px;
     }
     .about-text{
         font-family: var(--font-family);
-        font-size: 16px;
+        font-size: 20px;
         color: var(--font-color);
-        margin:0 5px;
+        padding: 30px 20px;
     }
     .team-div{
         display: grid;

@@ -8,19 +8,22 @@ NHS fees
 {% endblock %}
 
 {% block css %}
-<link href="{% static 'CSS/silvia.css' %}" rel="stylesheet">
+<link href="{% static 'CSS/style_silvia.css' %}" rel="stylesheet">
 {% endblock %}
 
 {% block content %}
     {% blocktranslate %}
         <div class="about-div">
             <div class="child-div1">YOU'RE IN SAFE</div>
+    {% endblocktranslate %}
+            {% blocktranslate %}
             <div class="child-div2">HANDS</div>
+            {% endblocktranslate %}
         </div>
         <i class="fa-solid fa-user"></i>
+        {% blocktranslate %}
         <p class="team-name">DR SILVIA OMER <br>COSMETIC & GENERAL DENTITRY</p> 
-        
-        <p>Dr Silvia Omer qualified from Kings College London and completed her foundation year with Thames Valley. 
+        <p class="bio">Dr Silvia Omer qualified from Kings College London and completed her foundation year with Thames Valley. 
             Here she progressed her dental skills in cosmetic restorations, root canal treatment, extractions, veneers, crowns and dentures. 
             She has been fortunate enough to have gained experience shadowing highly esteemed dentists over the past few 
             years while carrying out further post graduate training. 
@@ -28,7 +31,7 @@ NHS fees
             Silvia prides herself in providing a high - quality service with a strong focus on transparency and a warm and honest approach. 
             She enjoys taking the time to understand her patients and help ease their anxieties with her calming and friendly nature.
         </p>
-    {% endblocktranslate %}
+        {% endblocktranslate %}
 {% endblock %}
 
 {% block common_block %}

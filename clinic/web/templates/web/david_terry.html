@@ -8,16 +8,20 @@ NHS fees
 {% endblock %}
 
 {% block css %}
-<link href="{% static 'CSS/david.css' %}" rel="stylesheet">
+<link href="{% static 'CSS/style_david.css' %}" rel="stylesheet">
 {% endblock %}
 
 {% block content %}
     {% blocktranslate %}
         <div class="about-div">
             <div class="child-div1">YOU'RE IN SAFE</div>
+    {% endblocktranslate %}
+            {% blocktranslate %}
             <div class="child-div2">HANDS</div>
+            {% endblocktranslate %}
         </div>
         <i class="fa-solid fa-user"></i>
+        {% blocktranslate %}
         <p class="team-name">DR DAVID TERRY <br>PRINCIPAL DENTIST</p> 
         
         <p class="bio">David Terry qualified with Phd from UCL London in 1990 and was awarded the University of London Gold Medal as the most distinguished student. 
@@ -27,8 +31,7 @@ NHS fees
             He then completed postgraduate training in Restorative Dentistry and Implant Dentistry, 
             both of which he passed with distinction from the Eastman Dental Institute, UCL.
         </p>
-        
-    {% endblocktranslate %}
+        {% endblocktranslate %}
 {% endblock %}
 
 {% block common_block %}

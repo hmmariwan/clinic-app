@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,600,700,800,900&display=swap');
+
 /* the * selector applies the following styles to every element in HTML*/       
 * {
     margin: 0;
@@ -11,25 +11,17 @@
     --font-color:black;
     --border:1px solid black;
 }
-
+/*creating a CSS media query that targets devices with a minimum screen width of 781 pixels*/
 @media screen and (min-width: 781px) {
-form option{
-    background-color: rgb(119, 98, 98);
-    color: blue;
-}
-form select{
-    margin-top: 20px;
-    margin-left: 1050px;
-    
-}
-.header-div {
-    height: 250px;
+
+.header-div {/*styling the header-div which is the header of every page.*/
+    height: 250px; /*the height property has a value of 250px which is the height of the div*/
     width: 100%;
-    background-color:rgb(176, 118, 176);
-    position: relative;
+    background-color: rgb(176, 118, 176);
+    position: relative;/*the header-div is a parent div so the value of the position is relative*/
 }
 .header-div-logo{
-    position: absolute;
+    position: absolute;/*the header-div-logo is a child div so the value of the position is absolute*/
     top: 30px;
     left: 20px;
 }
@@ -46,7 +38,7 @@ form select{
     color: var(--font-color);
     margin-left: 215px;
 }
-.header-logo, .logos-div img{
+.header-logo, .logos-div img{/*styling the header's logo and all images in the logos-div*/
     border-radius: 20px;
     height: auto;
     max-width: 200px;
@@ -70,17 +62,17 @@ form select{
     flex-direction: column;
     color:black;
 }
-.fa-phone, .fa-envelope{
+.fa-phone, .fa-envelope{/*styling the phone and email icons*/
     padding-bottom: 15px;
 }
 
 .header-div-tel:hover i,.header-div-tel:hover a,
 .header-div-email:hover i,.header-div-email:hover a,
 .hover:hover i,.hover:hover a,.footer a:hover{
-    color:blue;
+    color:blue;/*the :hover selector is used to select the a and i tags when the user mouses over it*/
 }
 .header-appointment-div{
-    display: flex;
+    display: flex;/*the display property creates a flex container for a button*/
     position: absolute;
     top: 60px;
     right: 20px;
@@ -157,14 +149,14 @@ summary{
     color:var(--font-color);
     font-size: 18px;
 }
-details > summary {
-    list-style: none;
+details > summary {/*the > is used to select the direct child (summary) of a details tag*/
+    list-style: none;/*removing a default style of arrow inside a details tag*/
   }
   
-details > summary::after {
-    content: '\25B6';
+details > summary::after {/*this is a CSS pseudo-element that allows me to add content after the summary tag of a details tag*/
+    content: '\25B6';/*creating an arrow inside a disclosure widget*/
     display: inline-block;
-    transform: rotate(90deg);
+    transform: rotate(90deg);/*rotating the arrow by 90 degrees*/
     margin-right: 6px;
   }
   
@@ -219,17 +211,17 @@ details > summary::after {
 }
 
 .dropdown-content {
-    display: none;
+    display: none;/*hiding the dropdown menu*/
     position: absolute;
     padding: 0; 
     font-family: var(--font-family);
     color: var(--font-color);
-    z-index: 1;
+    z-index: 1;/*z-index is used to ensure the dropdown menu comes on the top*/
 }
 
 
 .dropdown-container li {
-    display: block;
+    display: block;/*displaying the dropdown menu as block-level tags */
 }
 
 .dropdown-container li a{/*to style all hyperlinks in a dropdown menu*/
@@ -238,7 +230,7 @@ details > summary::after {
     padding: 10px;
     
 }
-.dropdown i{
+.dropdown i{/*selecting the i tag */
     padding-left: 5px;
     font-size: 18px;
 }
@@ -280,14 +272,14 @@ details > summary::after {
     font-size: 18px;
 }
 
-.toggle-menu{
+.toggle-menu{/*this is a class selector*/
     position: absolute;
     width: 40px;
     height: 30px;
     z-index: 3;
-    cursor: pointer;
+    cursor: pointer;/*The cursor property specifies the type of cursor to be displayed when pointing on an element*/
     opacity: 0;
-    right: 38px;
+    right: 38px;/*The right property sets the right edge of the element to 38px*/
     top:40px ;
 }
 .base-logo{
@@ -308,7 +300,7 @@ details > summary::after {
 
 .enquire-div{
     margin-top: 160px;
-    margin-right: 30px;
+    margin-right: 15px;
     margin-bottom: 20px;
     background-color:rgb(193, 193, 93);
 }
@@ -367,12 +359,12 @@ details > summary::after {
     color:rgb(193, 193, 93); 
 }
 
-/*creating 3 column section of equal width
-but if I want the first column to be twice as wide as 
-the other two columns, I use grid-template-columns: 2fr 1fr 1fr.*/
+
 .footer-div{
     display: grid;
-    grid-template-columns: repeat(3,1fr);
+    grid-template-columns: repeat(3,1fr);/*creating 3 column section of equal width
+                                        but if I want the first column to be twice as wide as 
+                                        the other two columns, I use grid-template-columns: 2fr 1fr 1fr.*/
     border-top: var(--border);
 }
 .footer{
@@ -485,8 +477,29 @@ table th, table td{
 
 }
 
-@media screen and (min-width:781px) and (max-width:1150px) {
+@media screen and (min-width:1151px){/*creating another specific media query to prevent overlapping*/
+.chosen-language{
+    background-color: rgb(163, 241, 175);
+    color: blue;
+}
+.user-language{
+    margin-top: 20px;
+    margin-left: 1050px;
+    
+}
+}
 
+@media screen and (min-width:781px) and (max-width:1150px) {
+    .chosen-language{
+        background-color: rgb(163, 241, 175);
+        color: blue;
+    }
+    .user-language{
+        margin-top: 20px;
+        margin-left: 500px;
+        
+    }
+    
 .header-appointment-div{
     display: flex;
     position: absolute;
@@ -556,6 +569,7 @@ table th, table td{
     }
     }
 @media screen and (min-width:1201px){
+    
     .logos-div {
         display: grid;
         grid-template-rows: repeat(2,1fr); 
@@ -580,12 +594,12 @@ table th, table td{
     }
 }
 
-@media screen and (max-width: 780px) {
-form option{
-    background-color: rgb(119, 98, 98);
+@media screen and (max-width: 780px) {/*using a media query to create a layout for a small screen*/
+.chosen-language{
+    background-color: rgb(163, 241, 175);
     color: blue;
 }
-form select{
+.user-language{
     margin-top: 90px;
     margin-left: 130px;
     
@@ -670,7 +684,7 @@ a.header-appointment-button{
     color: var(--font-color);
 }
 .base-appointment-button {
-    padding: 10px 20px; /*creating some space of 10px on top & buttom and 20px on right & left of Book Now*/
+    padding: 10px 20px; /*creating some space of 10px on top & buttom and 20px on right & left */
     margin-left: 160px;
     font-size: 20px;
     cursor: pointer;
@@ -829,10 +843,6 @@ details > summary::after {
     color:black;
     padding: 10px 2px;
 }
-
-
-
-
 
 .toggle-menu{
     position: absolute;

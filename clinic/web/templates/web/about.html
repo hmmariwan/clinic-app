@@ -1,25 +1,30 @@
-{% extends 'web/index.html' %}
-{% load static %}
-{% load i18n %}
+{% extends 'web/index.html' %} <!--using the extends template tag to bring all codes from the parent (base) html file and overriding a specific block if needed-->
+{% load static %} <!--loading the static template tag which is required for using static template filter to include CSS and/or images assets-->
+{% load i18n %} <!--it's used to load translation template tags like blocktranslate-->
 
-
+<!--the text within this block names the tab, when the website is deployed-->
 {% block title %} 
-About 
+About    
 {% endblock %}
 
-{% block css %}
-<link href="{% static 'CSS/about.css' %}" rel="stylesheet">
+{% block css %}<!--this block is created for loading static assets via a link tag-->
+<link href="{% static 'CSS/style_about.css' %}" rel="stylesheet"> 
 {% endblock %}
 
-{%block content%}
-    {% blocktranslate %}
-        <div class="about-div">
-            <div class="child-div1"><strong>HIGH QUALITY</strong></div>
+{%block content%} <!--opening the block tag which contains all contents of the page-->
+    {% blocktranslate %} <!--opening the blocktranslate tag which is used to make the website translatable-->
+        <div class="about-div"> <!--creating a parent div which is on the top of the page has four child divs-->
+            <div class="child-div1"><strong>HIGH QUALITY</strong></div><!--using a strong tag to make the string looks different with its below paragraph-->
             <div class="child-div2"><strong>DENTAL CARE</strong></div>
             <div class="child-div4">We have been providing family dental care to the Neasden community for a century.</div>
-            <div class="child-div3"><a href="#team">MEET THE TEAM</a></div>
+            <div class="child-div3"><a href="#team">MEET THE TEAM</a></div><!--creating an internal link which takes the user to the team section -->
+    {% endblocktranslate %} <!--closing the tag-->
         </div>
+        {% blocktranslate %}
         <p class="about-title"><strong>CHEAPEST DENTAL CLINIC</strong></p>
+        {% endblocktranslate %}
+        {% blocktranslate %}
+        <!--creating a paragraph about the clinic-->
         <p class="about-text">At Cheapest Dental Clinic we are committed to providing a high level of service and patient 
             satisfaction in a relaxed and friendly environment. 
             Within the walls of our charming Grade 2 listed building, 
@@ -29,12 +34,12 @@ About
             options to help optimise their oral health. 
             If you would like to find out more about becoming part of our family then please call us on 
             0204 7777 666.</p>
-    {% endblocktranslate %}
-        <div class="team-div" id="team">
-            <div class="horizontal-div top">
-                <div class="vertical-div">
-                    <a href="{% url 'david_terry' %}" class="doctor">
-                        <i class="fa-solid fa-user"></i>
+        {% endblocktranslate %}
+        <div class="team-div" id="team"><!--this parent div has 2 child divs and contains all staff photos. The attribute id is used for linking this div with the above a tag-->
+            <div class="horizontal-div top"><!--creating the top section within the team-div-->
+                <div class="vertical-div"> <!--creating the first section inside the top section-->
+                    <a href="{% url 'david_terry' %}" class="doctor"><!--this links takes the user to the staff page-->
+                        <i class="fa-solid fa-user"></i><!--instead of a staff photo I used this icon-->
                         <p class="team-name">DR DAVID TERRY <br> <span class="team-expert">PRINCIPAL DENTIST</span></p> 
                     </a>
                 </div>
@@ -51,8 +56,8 @@ About
                     <i class="fa-solid fa-user"></i>
                 </div>
             </div>
-            <div class="horizontal-div bottom">
-                <div class="vertical-div">
+            <div class="horizontal-div bottom"><!--creating the bottom section  within the team-div-->
+                <div class="vertical-div">      <!--creating the first section inside the bottom section-->
                     <i class="fa-solid fa-user"></i>
                 </div>
                 <div class="vertical-div">
@@ -67,7 +72,7 @@ About
             </div>
         </div>
         
-{%endblock%}
+{%endblock%} <!--closing the block-->
 
     
     

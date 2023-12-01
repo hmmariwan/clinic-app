@@ -24,8 +24,8 @@ def contact(request):
         subject=request.POST['subject']
         message=request.POST['message']
         
-        message = _("Thank you %(name)s for submitting your form. We will get back to you very soon.")
-        messages.success(request, message)
+        confirmation_message = _("Thank you %(name)s for submitting your form. We will get back to you very soon.") % {'name': name}
+        messages.success(request, confirmation_message)
 
         email_to_owner = EmailMessage(
             subject=f'Subject: {subject} from {name}',
