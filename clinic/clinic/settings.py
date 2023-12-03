@@ -117,8 +117,8 @@ USE_I18N = True
 USE_TZ = True
 
 USE_L10N=True
-LANGUAGES=[('en', 'English'), ('es', 'Spanish'), ('ko', 'Korean'),('ar','Arabic'),('fa','Persian'),
-        ('fr','French'),('zh','Chinese'),('fil','Filipino'),('ur','Urdu'),('uz','Uzbek'),('hi','Hindi')]
+LANGUAGES=[('en', 'English'), ('es', 'Spanish'), ('ko', 'Korean'),('ar','Arabic'),('fa','Persian'),('ku','Kurdish'),('ckb','Central Kurdish'),
+        ('fr','French'),('zh','Chinese'),('fil','Filipino'),('ur','Urdu'),('uz','Uzbek'),('hi','Hindi'),('so','Somali')]
 
 
 # Static files (CSS, JavaScript, Images)
