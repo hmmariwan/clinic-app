@@ -51,6 +51,7 @@ def new_patients(request):
         name=request.POST.get('name')
         mobile=request.POST['mobile']
         email=request.POST['email']
+        message=request.POST['message']
         
         messages.success(request,f'Thank you {name} for submitting an appointment form. We look forward to seeing you!')
 
@@ -64,7 +65,7 @@ def new_patients(request):
 
         send_mail(
             'New patients',
-            f'Name: {name}\n\nMobile:{mobile}\n\nEmail:{email}',
+            f'Name: {name}\n\nMobile:{mobile}\n\nEmail:{email}\n\nMessage:{message}',
             'hmareiwan@outlook.com',
             ['hmareiwan@outlook.com'],
             fail_silently=False
