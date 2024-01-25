@@ -1,6 +1,6 @@
 crispy-bootstrap5==0.7
 Procfile
-Django==4.2.3
+
 django-crispy-forms==2.0
 asgiref==3.7.2
 dj-database-url==2.1.0
