@@ -2,7 +2,7 @@
 
 Cheapest Dental Clinic is a website that helps patients to find a dentist in London. The patients will be able to contact the practice by phone, email or completing an online form. The patients will also be able to find out informations about the clinic, their team and the treatment costs. 
 
-![home](clinic/web/static/screenshots/home-page.png) 
+![home](web/static/screenshots/home-page.png) 
 
 ## Header 
 * The practice logo.  
@@ -10,7 +10,7 @@ Cheapest Dental Clinic is a website that helps patients to find a dentist in Lon
 * A button which helps the patient to book an appointment.  
 * A horizontal navigation bar on the edge of the header bottom which will allow the user to navigate from page to page on large screen, but on a small screen all pages are inside a hamburger icon.
 
-![header](clinic-app/web/static/screenshots/header.png)  
+![header](web/static/screenshots/header.png)  
 
 ## Navigation bar 
 * Home page informs the user about where the practice is located and for how long they have been helping the community to keep their teeth and gum healthy. There are some links which will allow the user to fill in an online form, call or email the practice. Some of the practice achievements are written on the middle of this page with a button of filling an online form – which is repeated on several pages. There are some quick links, a link of external site and information about their opening hours on the bottom of the page. 
