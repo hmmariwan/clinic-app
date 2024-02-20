@@ -15,33 +15,33 @@ Cheapest Dental Clinic is a website that helps patients to find a dentist in Lon
 ## Navigation bar 
 * Home page informs the user about where the practice is located and for how long they have been helping the community to keep their teeth and gum healthy. There are some links which will allow the user to fill in an online form, call or email the practice. Some of the practice achievements are written on the middle of this page with a button of filling an online form – which is repeated on several pages. There are some quick links, a link of external site and information about their opening hours on the bottom of the page. 
 
-![homemain](clinic/web/static/screenshots/home.png) 
+![homemain](web/static/screenshots/home.png) 
 
-![homeform](clinic/web/static/screenshots/homeform.png) 
+![homeform](web/static/screenshots/homeform.png) 
 
 
 * About page contains information about each staff which can be found on their individual page.
 
   
-![about](clinic/web/static/screenshots/about.png) 
+![about](web/static/screenshots/about.png) 
 
 
 * Treatment page has a dropdown menu which will allow the user to choose one of three treatments.
   
 
-![treatment](clinic/web/static/screenshots/treatment-age.png) 
+![treatment](web/static/screenshots/treatment-age.png) 
 
 
 * Fees & Finance will also have a dropdown menu that helps the user to find out about NHS and private patients.
   
 
-![feespage](clinic/web/static/screenshots/fees-page.png) 
+![feespage](web/static/screenshots/fees-page.png) 
 
 
 * Contact page contains an online form, map, and the details of their contact.
  
 
-![contact](clinic/web/static/screenshots/contact-page.png)
+![contact](web/static/screenshots/contact-page.png)
 
 
 ## Footer  
@@ -50,7 +50,7 @@ Cheapest Dental Clinic is a website that helps patients to find a dentist in Lon
 * There is an icon of copyright in this section.
 
 
-![footer](clinic/web/static/screenshots/footer.png) 
+![footer](web/static/screenshots/footer.png) 
 
 
 ## Testing 
@@ -61,7 +61,7 @@ Cheapest Dental Clinic is a website that helps patients to find a dentist in Lon
 * The first time, I used an external CSS style, but the style of the form, button and page were not changed so I used an internal CSS style which changed the appearance of the page. I found that I incorrectly wrote the path of CSS file, in the link tag.
 
 
-![overlapping](clinic/web/static/screenshots/overlapping.png) 
+![overlapping](web/static/screenshots/overlapping.png) 
 
 
 ## Unfixed bugs  
@@ -69,10 +69,10 @@ In the project, I used Django to send an email to the owner of the website and t
 I also used PythonAnywhere to deploy the website which worked, but when the user submitted the online form, I received the below error, then when I went back to the previous page, the successful message of submitting the form was shown on the website. I was unable to fix this problem because I think I have a free account with them.
 
 
-![error](clinic/web/static/screenshots/error.png) 
+![error](web/static/screenshots/error.png) 
 
 
-![confirmation](clinic/web/static/screenshots/confirmation.png) 
+![confirmation](web/static/screenshots/confirmation.png) 
 
 
 ## Content  
